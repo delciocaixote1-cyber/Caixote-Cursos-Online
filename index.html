@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Caixote Cursos Online</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:#123c69;
+    color:white;
+    padding:16px 20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.topo{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:21px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:15px;
+    align-items:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+.pagina{
+    display:none;
+}
+
+.hero{
+    background:linear-gradient(135deg,#123c69,#1976d2);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.6;
+    max-width:700px;
+    margin:auto;
+}
+
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:55px 20px;
+}
+
+.titulo{
+    text-align:center;
+    color:#123c69;
+    margin-bottom:30px;
+    font-size:30px;
+}
+
+.botao{
+    border:none;
+    background:#ffb703;
+    color:#111;
+    padding:14px 25px;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:20px;
+    font-size:16px;
+}
+
+.botao:hover{
+    opacity:.9;
+}
+
+.cursos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+}
+
+.curso{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.curso h3{
+    color:#123c69;
+    margin-bottom:12px;
+}
+
+.curso p{
+    color:#555;
+    line-height:1.6;
+}
+
+.preco{
+    color:#1976d2;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.caixa{
+    background:white;
+    max-width:650px;
+    margin:auto;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 20px rgba(0,0,0,.09);
+}
+
+.campo{
+    margin-bottom:18px;
+}
+
+.campo label{
+    display:block;
+    margin-bottom:7px;
+    font-weight:bold;
+}
+
+.campo input,
+.campo select,
+.campo textarea{
+    width:100%;
+    padding:13px;
+    border:1px solid #ccc;
+    border-radius:7px;
+    font-size:16px;
+}
+
+.campo textarea{
+    height:100px;
+    resize:vertical;
+}
+
+.info{
+    background:#f1f5f9;
+    padding:20px;
+    border-radius:10px;
+    line-height:1.9;
+    margin-top:20px;
+}
+
+.mensagem{
+    display:none;
+    margin-top:18px;
+    padding:14px;
+    border-radius:8px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.sucesso{
+    background:#dff5e1;
+    color:#176b24;
+}
+
+.erro{
+    background:#ffe0e0;
+    color:#9b0000;
+}
+
+.contacto{
+    background:#123c69;
+    color:white;
+    max-width:none;
+    text-align:center;
+}
+
+footer{
+    background:#092b4c;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+.link{
+    color:#1976d2;
+    cursor:pointer;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+@media(max-width:700px){
+
+    .topo{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        gap:10px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    nav a{
+        font-size:14px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .titulo{
+        font-size:25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- CABEÇALHO -->
+
+<header>
+
+<div class="topo">
+
+<div class="logo">
+🎓 Caixote Cursos Online
+</div>
+
+<nav>
+
+<a onclick="mostrarPagina('inicio')">
+Início
+</a>
+
+<a onclick="mostrarPagina('cursos')">
+Cursos
+</a>
+
+<a onclick="mostrarPagina('inscricao')">
+Fazer Inscrição
+</a>
+
+<a onclick="mostrarPagina('login')">
+Login
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- INÍCIO -->
+
+<div id="inicio" class="pagina">
+
+<div class="hero">
+
+<h1>
+Caixote Cursos Online
+</h1>
+
+<p>
+Aprenda novas habilidades, estude online
+e prepare-se para novas oportunidades.
+</p>
+
+<button
+class="botao"
+onclick="mostrarPagina('inscricao')">
+
+📝 Fazer Inscrição
+
+</button>
+
+</div>
+
+
+<section>
+
+<h2 class="titulo">
+Por que estudar conosco?
+</h2>
+
+<div class="cursos">
+
+<div class="curso">
+<h3>📚 Cursos</h3>
+<p>
+Cursos organizados para desenvolver
+novas competências.
+</p>
+</div>
+
+<div class="curso">
+<h3>📱 Online</h3>
+<p>
+Acesse os seus estudos através
+do telemóvel ou computador.
+</p>
+</div>
+
+<div class="curso">
+<h3>🎓 Área do Aluno</h3>
+<p>
+Tenha uma conta e acompanhe
+o seu curso.
+</p>
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+<!-- CURSOS -->
+
+<div id="cursos" class="pagina">
+
+<section>
+
+<h2 class="titulo">
+📚 Nossos Cursos
+</h2>
+
+<div class="cursos">
+
+<div class="curso">
+<h3>💻 Informática</h3>
+
+<p>
+Aprenda fundamentos de informática,
+computadores e internet.
+</p>
+
+<div class="preco">
+1.000 MT
+</div>
+
+</div>
+
+
+<div class="curso">
+<h3>🌐 Desenvolvimento Web</h3>
+
+<p>
+Aprenda HTML, CSS e JavaScript
+para criar sites.
+</p>
+
+<div class="preco">
+1.500 MT
+</div>
+
+</div>
+
+
+<div class="curso">
+<h3>🐍 Programação Python</h3>
+
+<p>
+Aprenda os fundamentos da
+programação com Python.
+</p>
+
+<div class="preco">
+1.500 MT
+</div>
+
+</div>
+
+
+<div class="curso">
+<h3>🎨 Design Gráfico</h3>
+
+<p>
+Aprenda os fundamentos do
+design gráfico.
+</p>
+
+<div class="preco">
+1.200 MT
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+<!-- INSCRIÇÃO -->
+
+<div id="inscricao" class="pagina">
+
+<section>
+
+<h2 class="titulo">
+📝 Fazer Inscrição
+</h2>
+
+<div class="caixa">
+
+<form
+id="formInscricao"
+action="https://formsubmit.co/delciocaixote1@gmail.com"
+method="POST">
+
+<!-- CONFIGURAÇÃO DO FORMSUBMIT -->
+
+<input
+type="hidden"
+name="_subject"
+value="Nova inscrição - Caixote Cursos Online">
+
+<input
+type="hidden"
+name="_template"
+value="table">
+
+<input
+type="hidden"
+name="_captcha"
+value="true">
+
+<input
+type="hidden"
+name="_honey"
+value="">
+
+<!-- NOME -->
+
+<div class="campo">
+
+<label>
+Nome completo
+</label>
+
+<input
+type="text"
+name="nome"
+id="nome"
+placeholder="Digite o seu nome completo"
+required>
+
+</div>
+
+
+<!-- TELEFONE -->
+
+<div class="campo">
+
+<label>
+Telefone
+</label>
+
+<input
+type="tel"
+name="telefone"
+id="telefone"
+placeholder="Ex: 84 123 4567"
+required>
+
+</div>
+
+
+<!-- EMAIL -->
+
+<div class="campo">
+
+<label>
+E-mail
+</label>
+
+<input
+type="email"
+name="email"
+id="email"
+placeholder="Digite o seu e-mail"
+required>
+
+</div>
+
+
+<!-- CURSO -->
+
+<div class="campo">
+
+<label>
+Escolha o curso
+</label>
+
+<select
+name="curso"
+id="curso"
+required>
+
+<option value="">
+-- Escolha um curso --
+</option>
+
+<option value="Informática">
+Informática
+</option>
+
+<option value="Desenvolvimento Web">
+Desenvolvimento Web
+</option>
+
+<option value="Programação Python">
+Programação Python
+</option>
+
+<option value="Design Gráfico">
+Design Gráfico
+</option>
+
+</select>
+
+</div>
+
+
+<!-- MOTIVO -->
+
+<div class="campo">
+
+<label>
+Por que deseja fazer este curso?
+</label>
+
+<textarea
+name="motivo"
+placeholder="Escreva aqui..."
+></textarea>
+
+</div>
+
+
+<!-- PALAVRA-PASSE -->
+
+<div class="campo">
+
+<label>
+Criar palavra-passe da conta
+</label>
+
+<input
+type="password"
+id="senha"
+placeholder="Mínimo de 6 caracteres"
+minlength="6"
+required>
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Confirmar palavra-passe
+</label>
+
+<input
+type="password"
+id="confirmarSenha"
+placeholder="Digite novamente"
+minlength="6"
+required>
+
+</div>
+
+
+<button
+type="submit"
+class="botao">
+
+Enviar Inscrição
+
+</button>
+
+</form>
+
+
+<div
+id="mensagemInscricao"
+class="mensagem">
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+<!-- LOGIN -->
+
+<div id="login" class="pagina">
+
+<section>
+
+<h2 class="titulo">
+🔐 Login do Aluno
+</h2>
+
+<div class="caixa">
+
+<form id="formLogin">
+
+<div class="campo">
+
+<label>
+E-mail
+</label>
+
+<input
+type="email"
+id="loginEmail"
+placeholder="Digite o seu e-mail"
+required>
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Palavra-passe
+</label>
+
+<input
+type="password"
+id="loginSenha"
+placeholder="Digite a sua palavra-passe"
+required>
+
+</div>
+
+
+<button
+type="submit"
+class="botao">
+
+Entrar
+
+</button>
+
+</form>
+
+
+<div
+id="mensagemLogin"
+class="mensagem">
+</div>
+
+
+<p style="text-align:center;margin-top:20px;">
+
+Ainda não tem uma conta?
+
+<br><br>
+
+<a
+class="link"
+onclick="mostrarPagina('inscricao')">
+
+Criar conta
+
+</a>
+
+</p>
+
+</div>
+
+</section>
+
+</div>
+
+
+<!-- ÁREA DO ALUNO -->
+
+<div id="aluno" class="pagina">
+
+<section>
+
+<h2 class="titulo">
+🎓 Área do Aluno
+</h2>
+
+<div class="caixa">
+
+<h2 id="boasVindas">
+Bem-vindo!
+</h2>
+
+<div class="info">
+
+<p>
+<strong>Nome:</strong>
+<span id="alunoNome"></span>
+</p>
+
+<p>
+<strong>E-mail:</strong>
+<span id="alunoEmail"></span>
+</p>
+
+<p>
+<strong>Telefone:</strong>
+<span id="alunoTelefone"></span>
+</p>
+
+<p>
+<strong>Curso:</strong>
+<span id="alunoCurso"></span>
+</p>
+
+</div>
+
+
+<h3 style="margin-top:25px;color:#123c69;">
+📚 Meu Curso
+</h3>
+
+<p style="margin-top:10px;line-height:1.6;">
+O conteúdo das aulas será disponibilizado
+aqui quando a plataforma de cursos estiver
+configurada.
+</p>
+
+
+<button
+class="botao"
+onclick="sair()">
+
+🚪 Sair da Conta
+
+</button>
+
+</div>
+
+</section>
+
+</div>
+
+
+<!-- CONTACTO -->
+
+<section class="contacto">
+
+<h2>
+📞 Contacto
+</h2>
+
+<p style="margin-top:10px;">
+Caixote Cursos Online
+</p>
+
+<p style="margin-top:8px;">
+E-mail: delciocaixote1@gmail.com
+</p>
+
+</section>
+
+
+<!-- RODAPÉ -->
+
+<footer>
+
+<p>
+© 2026 Caixote Cursos Online
+</p>
+
+<p style="margin-top:8px;">
+Todos os direitos reservados.
+</p>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   NAVEGAÇÃO
+========================= */
+
+function mostrarPagina(nome){
+
+    document
+    .querySelectorAll(".pagina")
+    .forEach(function(pagina){
+
+        pagina.style.display="none";
+
+    });
+
+
+    const pagina =
+    document.getElementById(nome);
+
+
+    if(pagina){
+
+        pagina.style.display="block";
+
+    }
+
+    window.scrollTo(0,0);
+}
+
+
+/* =========================
+   INÍCIO
+========================= */
+
+mostrarPagina("inicio");
+
+
+/* =========================
+   CRIAÇÃO DA CONTA
+========================= */
+
+document
+.getElementById("formInscricao")
+.addEventListener("submit",function(event){
+
+    const senha =
+    document.getElementById("senha").value;
+
+    const confirmar =
+    document.getElementById("confirmarSenha").value;
+
+    const mensagem =
+    document.getElementById("mensagemInscricao");
+
+
+    if(senha !== confirmar){
+
+        event.preventDefault();
+
+        mensagem.className="mensagem erro";
+
+        mensagem.style.display="block";
+
+        mensagem.textContent=
+        "❌ As palavras-passe não são iguais.";
+
+        return;
+    }
+
+
+    if(senha.length < 6){
+
+        event.preventDefault();
+
+        mensagem.className="mensagem erro";
+
+        mensagem.style.display="block";
+
+        mensagem.textContent=
+        "❌ A palavra-passe deve ter pelo menos 6 caracteres.";
+
+        return;
+    }
+
+
+    /*
+      IMPORTANTE:
+      A palavra-passe não é enviada
+      para o FormSubmit.
+
+      Guardamos apenas uma versão
+      local para demonstração.
+    */
+
+    const nome =
+    document.getElementById("nome").value;
+
+    const telefone =
+    document.getElementById("telefone").value;
+
+    const email =
+    document.getElementById("email")
+    .value
+    .trim()
+    .toLowerCase();
+
+    const curso =
+    document.getElementById("curso").value;
+
+
+    const aluno = {
+
+        nome:nome,
+
+        telefone:telefone,
+
+        email:email,
+
+        curso:curso,
+
+        senha:senha
+
+    };
+
+
+    localStorage.setItem(
+        "caixote_aluno_"+email,
+        JSON.stringify(aluno)
+    );
+
+
+    localStorage.setItem(
+        "caixote_email_logado",
+        email
+    );
+
+
+    /*
+      NÃO usamos preventDefault aqui.
+
+      O formulário continuará para o
+      FormSubmit e enviará a inscrição
+      para o seu e-mail.
+    */
+
+});
+
+
+/* =========================
+   LOGIN
+========================= */
+
+document
+.getElementById("formLogin")
+.addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+
+    const email =
+    document.getElementById("loginEmail")
+    .value
+    .trim()
+    .toLowerCase();
+
+
+    const senha =
+    document.getElementById("loginSenha")
+    .value;
+
+
+    const mensagem =
+    document.getElementById("mensagemLogin");
+
+
+    const dados =
+    localStorage.getItem(
+        "caixote_aluno_"+email
+    );
+
+
+    if(!dados){
+
+        mensagem.className="mensagem erro";
+
+        mensagem.style.display="block";
+
+        mensagem.textContent=
+        "❌ Conta não encontrada neste dispositivo.";
+
+        return;
+
+    }
+
+
+    const aluno =
+    JSON.parse(dados);
+
+
+    if(aluno.senha !== senha){
+
+        mensagem.className="mensagem erro";
+
+        mensagem.style.display="block";
+
+        mensagem.textContent=
+        "❌ Palavra-passe incorreta.";
+
+        return;
+
+    }
+
+
+    localStorage.setItem(
+        "caixote_email_logado",
+        email
+    );
+
+
+    carregarAluno(aluno);
+
+});
+
+
+/* =========================
+   CARREGAR ÁREA DO ALUNO
+========================= */
+
+function carregarAluno(aluno){
+
+    document.getElementById("boasVindas")
+    .textContent=
+    "Bem-vindo, "+aluno.nome+"!";
+
+
+    document.getElementById("alunoNome")
+    .textContent=aluno.nome;
+
+
+    document.getElementById("alunoEmail")
+    .textContent=aluno.email;
+
+
+    document.getElementById("alunoTelefone")
+    .textContent=aluno.telefone;
+
+
+    document.getElementById("alunoCurso")
+    .textContent=aluno.curso;
+
+
+    mostrarPagina("aluno");
+}
+
+
+/* =========================
+   SAIR
+========================= */
+
+function sair(){
+
+    localStorage.removeItem(
+        "caixote_email_logado"
+    );
+
+
+    mostrarPagina("inicio");
+}
+
+
+/* =========================
+   VERIFICAR SESSÃO
+========================= */
+
+const emailLogado =
+localStorage.getItem(
+    "caixote_email_logado"
+);
+
+
+if(emailLogado){
+
+    const dados =
+    localStorage.getItem(
+        "caixote_aluno_"+emailLogado
+    );
+
+
+    if(dados){
+
+        carregarAluno(
+            JSON.parse(dados)
+        );
+
+    }
+}
+
+</script>
+
+</body>
+</html>
