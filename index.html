@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta name="google-site-verification" content="NVW2wOl0SOMTvKmTmpG1RVGJLmv69i4uYpTwTHkSf4w" />  
+
+<meta name="google-site-verification" content="NVW2wOl0SOMTvKmTmpG1RVGJLmv69i4uYpTwTHkSf4w">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Caixote Cursos Online</title>
 
+<meta name="description"
+content="Caixote Cursos Online - Formação online em Informática, Desenvolvimento Web, Programação Python e Design Gráfico.">
+
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -15,18 +21,25 @@
     font-family:Arial,sans-serif;
 }
 
-body{
-    background:#f4f7fb;
-    color:#222;
+html{
+    scroll-behavior:smooth;
 }
 
+body{
+    background:#f4f7fb;
+    color:#1d2939;
+}
+
+/* ================= HEADER ================= */
+
 header{
-    background:#123c69;
+    background:#0b1f3a;
     color:white;
     padding:16px 20px;
     position:sticky;
     top:0;
     z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,0.2);
 }
 
 .topo{
@@ -40,12 +53,12 @@ header{
 .logo{
     font-size:21px;
     font-weight:bold;
+    color:#f4c542;
 }
 
 nav{
     display:flex;
-    gap:15px;
-    align-items:center;
+    gap:18px;
 }
 
 nav a{
@@ -55,215 +68,469 @@ nav a{
 }
 
 nav a:hover{
-    text-decoration:underline;
+    color:#f4c542;
 }
+
+/* ================= PÁGINAS ================= */
 
 .pagina{
     display:none;
 }
 
+.pagina.ativa{
+    display:block;
+}
+
+/* ================= HERO ================= */
+
 .hero{
-    background:linear-gradient(135deg,#123c69,#1976d2);
-    color:white;
+    min-height:600px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-align:center;
-    padding:80px 20px;
+    color:white;
+    padding:60px 20px;
+
+    background:
+    linear-gradient(
+        rgba(11,31,58,0.92),
+        rgba(18,60,105,0.92)
+    );
+}
+
+.hero-content{
+    max-width:850px;
 }
 
 .hero h1{
-    font-size:40px;
-    margin-bottom:15px;
+    font-size:44px;
+    margin-bottom:18px;
+}
+
+.hero h1 span{
+    color:#f4c542;
 }
 
 .hero p{
     font-size:18px;
-    line-height:1.6;
-    max-width:700px;
-    margin:auto;
+    line-height:1.7;
+    margin-bottom:30px;
 }
 
+.botao{
+    display:inline-block;
+    background:#f4c542;
+    color:#0b1f3a;
+    border:none;
+    padding:15px 30px;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:bold;
+    text-decoration:none;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.botao:hover{
+    background:#ffd966;
+    transform:translateY(-2px);
+}
+
+/* ================= SEÇÕES ================= */
+
 section{
+    padding:60px 20px;
+}
+
+.container{
     max-width:1100px;
     margin:auto;
-    padding:55px 20px;
 }
 
 .titulo{
     text-align:center;
-    color:#123c69;
-    margin-bottom:30px;
+    margin-bottom:40px;
+}
+
+.titulo h2{
+    color:#0b1f3a;
     font-size:30px;
+    margin-bottom:10px;
 }
 
-.botao{
-    border:none;
-    background:#ffb703;
-    color:#111;
-    padding:14px 25px;
-    border-radius:8px;
-    font-weight:bold;
-    cursor:pointer;
-    margin-top:20px;
-    font-size:16px;
+.titulo p{
+    color:#667085;
 }
 
-.botao:hover{
-    opacity:.9;
+/* ================= PROFESSOR ================= */
+
+.professor{
+    background:white;
+    text-align:center;
 }
+
+.professor-box{
+    max-width:800px;
+    margin:auto;
+}
+
+.professor h2{
+    color:#0b1f3a;
+    margin-bottom:12px;
+}
+
+.professor strong{
+    color:#123c69;
+}
+
+/* ================= CURSOS ================= */
 
 .cursos{
+    background:#f4f7fb;
+}
+
+.lista-cursos{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
 }
 
 .curso{
     background:white;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    padding:28px;
+    border-radius:15px;
+    border-top:5px solid #f4c542;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
 .curso h3{
-    color:#123c69;
+    color:#0b1f3a;
+    font-size:23px;
     margin-bottom:12px;
 }
 
 .curso p{
-    color:#555;
+    color:#667085;
     line-height:1.6;
 }
 
-.preco{
-    color:#1976d2;
-    font-weight:bold;
-    margin-top:15px;
+.info{
+    margin-top:18px;
+    border-top:1px solid #eee;
+    padding-top:15px;
 }
 
-.caixa{
-    background:white;
+.info div{
+    margin:7px 0;
+}
+
+.info strong{
+    color:#0b1f3a;
+}
+
+/* ================= BOTÃO PLATAFORMA ================= */
+
+.plataforma{
+    background:#0b1f3a;
+    color:white;
+    text-align:center;
+}
+
+.plataforma h2{
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.plataforma p{
+    margin-bottom:25px;
+}
+
+/* ================= LOGIN / CADASTRO ================= */
+
+.tela-acesso{
+    min-height:calc(100vh - 70px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 15px;
+    background:
+    linear-gradient(
+        135deg,
+        #0b1f3a,
+        #123c69
+    );
+}
+
+.caixa-acesso{
+    width:100%;
     max-width:650px;
-    margin:auto;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 4px 20px rgba(0,0,0,.09);
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.25);
+}
+
+.caixa-acesso h2{
+    text-align:center;
+    color:#0b1f3a;
+    margin-bottom:10px;
+}
+
+.subtitulo{
+    text-align:center;
+    color:#667085;
+    margin-bottom:25px;
 }
 
 .campo{
-    margin-bottom:18px;
+    margin-bottom:17px;
 }
 
 .campo label{
     display:block;
-    margin-bottom:7px;
     font-weight:bold;
+    color:#344054;
+    margin-bottom:6px;
 }
 
 .campo input,
-.campo select,
-.campo textarea{
+.campo select{
     width:100%;
     padding:13px;
-    border:1px solid #ccc;
-    border-radius:7px;
-    font-size:16px;
-}
-
-.campo textarea{
-    height:100px;
-    resize:vertical;
-}
-
-.info{
-    background:#f1f5f9;
-    padding:20px;
-    border-radius:10px;
-    line-height:1.9;
-    margin-top:20px;
-}
-
-.mensagem{
-    display:none;
-    margin-top:18px;
-    padding:14px;
+    border:1px solid #d0d5dd;
     border-radius:8px;
-    text-align:center;
+    font-size:15px;
+    outline:none;
+}
+
+.campo input:focus,
+.campo select:focus{
+    border-color:#123c69;
+    box-shadow:0 0 0 2px rgba(18,60,105,0.1);
+}
+
+.linha{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.botao-principal{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    background:#f4c542;
+    color:#0b1f3a;
+    font-size:16px;
     font-weight:bold;
+    cursor:pointer;
 }
 
-.sucesso{
-    background:#dff5e1;
-    color:#176b24;
+.botao-principal:hover{
+    background:#ffd966;
 }
 
-.erro{
-    background:#ffe0e0;
-    color:#9b0000;
+.botao-secundario{
+    width:100%;
+    padding:13px;
+    border:2px solid #0b1f3a;
+    border-radius:8px;
+    background:white;
+    color:#0b1f3a;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
 }
 
-.contacto{
-    background:#123c69;
-    color:white;
-    max-width:none;
-    text-align:center;
-}
-
-footer{
-    background:#092b4c;
-    color:white;
-    text-align:center;
-    padding:25px;
+.botao-secundario:hover{
+    background:#f4f7fb;
 }
 
 .link{
-    color:#1976d2;
-    cursor:pointer;
-    font-weight:bold;
-    text-decoration:none;
+    text-align:center;
+    margin-top:18px;
 }
 
-@media(max-width:700px){
+.link button{
+    background:none;
+    border:none;
+    color:#123c69;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.aviso{
+    background:#fff8df;
+    border-left:4px solid #f4c542;
+    padding:12px;
+    margin-bottom:20px;
+    font-size:13px;
+    color:#5c4b10;
+}
+
+/* ================= BENEFÍCIOS ================= */
+
+.beneficios{
+    background:white;
+}
+
+.beneficios-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.beneficio{
+    text-align:center;
+    background:#f4f7fb;
+    padding:25px 15px;
+    border-radius:12px;
+}
+
+.icone{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.beneficio h3{
+    color:#0b1f3a;
+    margin-bottom:8px;
+}
+
+.beneficio p{
+    color:#667085;
+    font-size:14px;
+}
+
+/* ================= CONTACTOS ================= */
+
+.contactos{
+    background:#f4f7fb;
+    text-align:center;
+}
+
+.contacto-box{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.07);
+}
+
+.contacto-box p{
+    margin:10px 0;
+}
+
+.whatsapp{
+    color:#128c7e;
+    font-weight:bold;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#07172b;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+}
+
+footer strong{
+    color:#f4c542;
+}
+
+footer p{
+    margin:7px;
+    font-size:14px;
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media(max-width:800px){
 
     .topo{
         flex-direction:column;
-        gap:15px;
+        gap:12px;
     }
 
     nav{
-        gap:10px;
         flex-wrap:wrap;
         justify-content:center;
     }
 
-    nav a{
-        font-size:14px;
+    .hero h1{
+        font-size:32px;
+    }
+
+    .lista-cursos{
+        grid-template-columns:1fr;
+    }
+
+    .beneficios-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:550px){
+
+    .hero{
+        min-height:500px;
     }
 
     .hero h1{
-        font-size:30px;
+        font-size:28px;
     }
 
     .hero p{
         font-size:16px;
     }
 
-    .titulo{
-        font-size:25px;
+    .beneficios-grid{
+        grid-template-columns:1fr;
     }
+
+    .linha{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+
+    .caixa-acesso{
+        padding:22px;
+    }
+
 }
+
+
+/* ================= ESCONDER PÁGINAS ================= */
+
+#paginaLogin,
+#paginaCadastro{
+    display:none;
+}
+
+#paginaLogin.ativa,
+#paginaCadastro.ativa{
+    display:flex;
+}
+
 </style>
+
 </head>
 
 <body>
 
 
-<!-- CABEÇALHO -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
 <div class="topo">
 
 <div class="logo">
-🎓 Caixote Cursos Online
+Caixote Cursos
 </div>
 
 <nav>
@@ -276,12 +543,12 @@ Início
 Cursos
 </a>
 
-<a onclick="mostrarPagina('inscricao')">
-Fazer Inscrição
+<a onclick="mostrarPagina('plataforma')">
+Plataforma
 </a>
 
-<a onclick="mostrarPagina('login')">
-Login
+<a onclick="mostrarPagina('contactos')">
+Contacto
 </a>
 
 </nav>
@@ -291,138 +558,468 @@ Login
 </header>
 
 
-<!-- INÍCIO -->
 
-<div id="inicio" class="pagina">
+<!-- ================================================= -->
+<!-- PÁGINA PRINCIPAL -->
+<!-- ================================================= -->
 
-<div class="hero">
+<main id="paginaPrincipal" class="pagina ativa">
+
+
+<!-- HERO -->
+
+<section class="hero" id="inicio">
+
+<div class="hero-content">
 
 <h1>
-Caixote Cursos Online
+Aprenda hoje.
+<span>Prepare o seu futuro.</span>
 </h1>
 
 <p>
-Aprenda novas habilidades, estude online
-e prepare-se para novas oportunidades.
+Bem-vindo à Caixote Cursos Online.
+Desenvolva novas competências através de cursos
+online práticos, acessíveis e preparados para diferentes
+necessidades de aprendizagem.
 </p>
 
 <button
 class="botao"
-onclick="mostrarPagina('inscricao')">
+onclick="mostrarPagina('plataforma')"
+>
+🎓 Entrar na Plataforma
+</button>
 
-📝 Fazer Inscrição
+</div>
 
+</section>
+
+
+
+<!-- PROFESSOR -->
+
+<section class="professor">
+
+<div class="container">
+
+<div class="professor-box">
+
+<h2>
+Professor Délcio Caixote
+</h2>
+
+<p>
+A <strong>Caixote Cursos Online</strong> procura tornar
+a aprendizagem mais simples e acessível, ajudando os
+estudantes a desenvolver conhecimentos úteis para os
+seus estudos e para o futuro profissional.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CURSOS -->
+
+<section class="cursos" id="cursos">
+
+<div class="container">
+
+<div class="titulo">
+
+<h2>
+Nossos Cursos
+</h2>
+
+<p>
+Escolha uma área e comece a sua jornada de aprendizagem.
+</p>
+
+</div>
+
+
+<div class="lista-cursos">
+
+
+<div class="curso">
+
+<h3>
+💻 Informática
+</h3>
+
+<p>
+Aprenda a utilizar o computador de forma prática e
+desenvolva conhecimentos essenciais para estudos,
+trabalho e atividades do dia a dia.
+</p>
+
+<div class="info">
+
+<div><strong>Duração:</strong> 720 horas</div>
+<div><strong>Modalidade:</strong> Online</div>
+<div><strong>Inscrição:</strong> 150 MTS</div>
+<div><strong>Início:</strong> A qualquer momento</div>
+<div><strong>Requisito:</strong> Saber ler</div>
+<div><strong>Certificado:</strong> Sim</div>
+
+</div>
+
+</div>
+
+
+
+<div class="curso">
+
+<h3>
+🌐 Desenvolvimento Web
+</h3>
+
+<p>
+Aprenda os fundamentos necessários para criar e
+estruturar páginas e sites para a internet.
+</p>
+
+<div class="info">
+
+<div><strong>Duração:</strong> 720 horas</div>
+<div><strong>Modalidade:</strong> Online</div>
+<div><strong>Inscrição:</strong> 150 MTS</div>
+<div><strong>Início:</strong> A qualquer momento</div>
+<div><strong>Requisito:</strong> Saber ler</div>
+<div><strong>Certificado:</strong> Sim</div>
+
+</div>
+
+</div>
+
+
+
+<div class="curso">
+
+<h3>
+🐍 Programação Python
+</h3>
+
+<p>
+Aprenda programação com Python de maneira gradual,
+desenvolvendo raciocínio lógico e criando os seus
+primeiros programas.
+</p>
+
+<div class="info">
+
+<div><strong>Duração:</strong> 720 horas</div>
+<div><strong>Modalidade:</strong> Online</div>
+<div><strong>Inscrição:</strong> 150 MTS</div>
+<div><strong>Início:</strong> A qualquer momento</div>
+<div><strong>Requisito:</strong> Saber ler</div>
+<div><strong>Certificado:</strong> Sim</div>
+
+</div>
+
+</div>
+
+
+
+<div class="curso">
+
+<h3>
+🎨 Design Gráfico
+</h3>
+
+<p>
+Desenvolva conhecimentos de criatividade, composição
+e comunicação visual para criação de materiais gráficos.
+</p>
+
+<div class="info">
+
+<div><strong>Duração:</strong> 720 horas</div>
+<div><strong>Modalidade:</strong> Online</div>
+<div><strong>Inscrição:</strong> 150 MTS</div>
+<div><strong>Início:</strong> A qualquer momento</div>
+<div><strong>Requisito:</strong> Saber ler</div>
+<div><strong>Certificado:</strong> Sim</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- BENEFÍCIOS -->
+
+<section class="beneficios">
+
+<div class="container">
+
+<div class="titulo">
+
+<h2>
+Por que estudar conosco?
+</h2>
+
+</div>
+
+
+<div class="beneficios-grid">
+
+
+<div class="beneficio">
+<div class="icone">🌐</div>
+<h3>Online</h3>
+<p>Estude através da internet.</p>
+</div>
+
+
+<div class="beneficio">
+<div class="icone">⏰</div>
+<h3>Flexibilidade</h3>
+<p>Comece a qualquer momento.</p>
+</div>
+
+
+<div class="beneficio">
+<div class="icone">🎓</div>
+<h3>Certificado</h3>
+<p>Certificado após a formação.</p>
+</div>
+
+
+<div class="beneficio">
+<div class="icone">💰</div>
+<h3>Acessível</h3>
+<p>Inscrição por 150 MTS.</p>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CONTACTOS -->
+
+<section class="contactos" id="contactos">
+
+<div class="container">
+
+<div class="titulo">
+
+<h2>
+Entre em contacto
+</h2>
+
+<p>
+Estamos disponíveis para esclarecer dúvidas.
+</p>
+
+</div>
+
+
+<div class="contacto-box">
+
+<p>
+📱 <strong>WhatsApp:</strong>
+<span class="whatsapp">850 313 445</span>
+</p>
+
+<p>
+📞 <strong>Telefone:</strong>
+864 576 664
+</p>
+
+<p>
+📞 <strong>Telefone:</strong>
+835 316 062
+</p>
+
+<p>
+👨‍🏫 <strong>Professor:</strong>
+Délcio Caixote
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+<strong>Caixote Cursos Online</strong>
+</p>
+
+<p>
+Aprender hoje para construir um futuro melhor.
+</p>
+
+<p>
+© 2026 Caixote Cursos Online
+</p>
+
+</footer>
+
+</main>
+
+
+
+<!-- ================================================= -->
+<!-- PLATAFORMA -->
+<!-- ================================================= -->
+
+<section
+id="paginaPlataforma"
+class="pagina"
+style="padding:0;"
+>
+
+<div class="tela-acesso">
+
+<div class="caixa-acesso">
+
+<h2>
+🎓 Plataforma do Aluno
+</h2>
+
+<p class="subtitulo">
+Entre na sua conta ou crie uma nova conta.
+</p>
+
+
+<button
+class="botao-principal"
+onclick="mostrarPagina('login')"
+>
+🔐 Entrar
+</button>
+
+
+<button
+class="botao-secundario"
+onclick="mostrarPagina('cadastro')"
+>
+📝 Criar conta / Inscrever-me
+</button>
+
+
+<button
+class="botao-secundario"
+onclick="mostrarPagina('inicio')"
+>
+← Voltar ao início
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- LOGIN -->
+<!-- ================================================= -->
+
+<section
+id="paginaLogin"
+class="pagina"
+style="padding:0;"
+>
+
+<div class="tela-acesso">
+
+<div class="caixa-acesso">
+
+<h2>
+🔐 Entrar na Plataforma
+</h2>
+
+<p class="subtitulo">
+Aceda à sua conta de aluno.
+</p>
+
+
+<form onsubmit="loginDemo(event)">
+
+<div class="campo">
+
+<label>
+E-mail
+</label>
+
+<input
+type="email"
+id="loginEmail"
+placeholder="Digite o seu e-mail"
+required
+>
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Senha
+</label>
+
+<input
+type="password"
+id="loginSenha"
+placeholder="Digite a sua senha"
+required
+>
+
+</div>
+
+
+<button
+type="submit"
+class="botao-principal"
+>
+Entrar
+</button>
+
+</form>
+
+
+<div class="link">
+
+<button onclick="mostrarPagina('cadastro')">
+Ainda não tenho conta
 </button>
 
 </div>
 
 
-<section>
+<div class="link">
 
-<h2 class="titulo">
-Por que estudar conosco?
-</h2>
+<button onclick="mostrarPagina('plataforma')">
+← Voltar
+</button>
 
-<div class="cursos">
-
-<div class="curso">
-<h3>📚 Cursos</h3>
-<p>
-Cursos organizados para desenvolver
-novas competências.
-</p>
-</div>
-
-<div class="curso">
-<h3>📱 Online</h3>
-<p>
-Acesse os seus estudos através
-do telemóvel ou computador.
-</p>
-</div>
-
-<div class="curso">
-<h3>🎓 Área do Aluno</h3>
-<p>
-Tenha uma conta e acompanhe
-o seu curso.
-</p>
-</div>
-
-</div>
-
-</section>
-
-</div>
-
-
-<!-- CURSOS -->
-
-<div id="cursos" class="pagina">
-
-<section>
-
-<h2 class="titulo">
-📚 Nossos Cursos
-</h2>
-
-<div class="cursos">
-
-<div class="curso">
-<h3>💻 Informática</h3>
-
-<p>
-Aprenda fundamentos de informática,
-computadores e internet.
-</p>
-
-<div class="preco">
-1.000 MT
-</div>
-
-</div>
-
-
-<div class="curso">
-<h3>🌐 Desenvolvimento Web</h3>
-
-<p>
-Aprenda HTML, CSS e JavaScript
-para criar sites.
-</p>
-
-<div class="preco">
-1.500 MT
-</div>
-
-</div>
-
-
-<div class="curso">
-<h3>🐍 Programação Python</h3>
-
-<p>
-Aprenda os fundamentos da
-programação com Python.
-</p>
-
-<div class="preco">
-1.500 MT
-</div>
-
-</div>
-
-
-<div class="curso">
-<h3>🎨 Design Gráfico</h3>
-
-<p>
-Aprenda os fundamentos do
-design gráfico.
-</p>
-
-<div class="preco">
-1.200 MT
 </div>
 
 </div>
@@ -431,51 +1028,45 @@ design gráfico.
 
 </section>
 
-</div>
 
 
-<!-- INSCRIÇÃO -->
+<!-- ================================================= -->
+<!-- CADASTRO -->
+<!-- ================================================= -->
 
-<div id="inscricao" class="pagina">
+<section
+id="paginaCadastro"
+class="pagina"
+style="padding:0;"
+>
 
-<section>
+<div class="tela-acesso">
 
-<h2 class="titulo">
-📝 Fazer Inscrição
+<div class="caixa-acesso">
+
+<h2>
+📝 Cadastro do Aluno
 </h2>
 
-<div class="caixa">
+<p class="subtitulo">
+Preencha os seus dados para solicitar a inscrição.
+</p>
+
+
+<div class="aviso">
+
+<strong>Importante:</strong>
+Os dados pessoais devem ser fornecidos apenas
+através de um sistema oficial e seguro.
+
+</div>
+
 
 <form
-id="formInscricao"
-action="https://formsubmit.co/delciocaixote1@gmail.com"
-method="POST">
-<input type="hidden" name="_subject" value="Nova inscrição no site">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_template" value="table">
-<!-- CONFIGURAÇÃO DO FORMSUBMIT -->
+id="formCadastro"
+onsubmit="cadastroDemo(event)"
+>
 
-<input
-type="hidden"
-name="_subject"
-value="Nova inscrição - Caixote Cursos Online">
-
-<input
-type="hidden"
-name="_template"
-value="table">
-
-<input
-type="hidden"
-name="_captcha"
-value="true">
-
-<input
-type="hidden"
-name="_honey"
-value="">
-
-<!-- NOME -->
 
 <div class="campo">
 
@@ -486,32 +1077,130 @@ Nome completo
 <input
 type="text"
 name="nome"
-id="nome"
-placeholder="Digite o seu nome completo"
-required>
+placeholder="Nome completo"
+required
+>
 
 </div>
 
 
-<!-- TELEFONE -->
+<div class="linha">
 
 <div class="campo">
 
 <label>
-Telefone
+Data de nascimento
+</label>
+
+<input
+type="date"
+name="data_nascimento"
+required
+>
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Género
+</label>
+
+<select
+name="genero"
+required
+>
+
+<option value="">
+Selecione
+</option>
+
+<option value="Masculino">
+Masculino
+</option>
+
+<option value="Feminino">
+Feminino
+</option>
+
+<option value="Outro">
+Outro
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Naturalidade
+</label>
+
+<input
+type="text"
+name="naturalidade"
+placeholder="Local de nascimento"
+required
+>
+
+</div>
+
+
+<div class="linha">
+
+<div class="campo">
+
+<label>
+Número do BI
+</label>
+
+<input
+type="text"
+name="bi"
+placeholder="Número do BI"
+required
+>
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Data de emissão do BI
+</label>
+
+<input
+type="date"
+name="data_emissao_bi"
+required
+>
+
+</div>
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Número de telefone
 </label>
 
 <input
 type="tel"
 name="telefone"
-id="telefone"
-placeholder="Ex: 84 123 4567"
-required>
+placeholder="Ex.: 85xxxxxxx"
+required
+>
 
 </div>
 
-
-<!-- EMAIL -->
 
 <div class="campo">
 
@@ -522,14 +1211,12 @@ E-mail
 <input
 type="email"
 name="email"
-id="email"
-placeholder="Digite o seu e-mail"
-required>
+placeholder="seuemail@gmail.com"
+required
+>
 
 </div>
 
-
-<!-- CURSO -->
 
 <div class="campo">
 
@@ -539,11 +1226,11 @@ Escolha o curso
 
 <select
 name="curso"
-id="curso"
-required>
+required
+>
 
 <option value="">
--- Escolha um curso --
+-- Selecione um curso --
 </option>
 
 <option value="Informática">
@@ -567,36 +1254,18 @@ Design Gráfico
 </div>
 
 
-<!-- MOTIVO -->
-
 <div class="campo">
 
 <label>
-Por que deseja fazer este curso?
-</label>
-
-<textarea
-name="motivo"
-placeholder="Escreva aqui..."
-></textarea>
-
-</div>
-
-
-<!-- PALAVRA-PASSE -->
-
-<div class="campo">
-
-<label>
-Criar palavra-passe da conta
+Criar senha
 </label>
 
 <input
 type="password"
-id="senha"
-placeholder="Mínimo de 6 caracteres"
-minlength="6"
-required>
+name="senha"
+placeholder="Crie uma senha"
+required
+>
 
 </div>
 
@@ -604,526 +1273,204 @@ required>
 <div class="campo">
 
 <label>
-Confirmar palavra-passe
+Confirmar senha
 </label>
 
 <input
 type="password"
-id="confirmarSenha"
-placeholder="Digite novamente"
-minlength="6"
-required>
+name="confirmar_senha"
+placeholder="Digite a senha novamente"
+required
+>
 
 </div>
 
 
 <button
 type="submit"
-class="botao">
-
-Enviar Inscrição
-
-</button>
-
-</form>
-
-
-<div
-id="mensagemInscricao"
-class="mensagem">
-</div>
-
-</div>
-
-</section>
-
-</div>
-
-
-<!-- LOGIN -->
-
-<div id="login" class="pagina">
-
-<section>
-
-<h2 class="titulo">
-🔐 Login do Aluno
-</h2>
-
-<div class="caixa">
-
-<form id="formLogin">
-
-<div class="campo">
-
-<label>
-E-mail
-</label>
-
-<input
-type="email"
-id="loginEmail"
-placeholder="Digite o seu e-mail"
-required>
-
-</div>
-
-
-<div class="campo">
-
-<label>
-Palavra-passe
-</label>
-
-<input
-type="password"
-id="loginSenha"
-placeholder="Digite a sua palavra-passe"
-required>
-
-</div>
-
-
-<button
-type="submit"
-class="botao">
-
-Entrar
-
-</button>
-
-</form>
-
-
-<div
-id="mensagemLogin"
-class="mensagem">
-</div>
-
-
-<p style="text-align:center;margin-top:20px;">
-
-Ainda não tem uma conta?
-
-<br><br>
-
-<a
-class="link"
-onclick="mostrarPagina('inscricao')">
-
+class="botao-principal"
+>
 Criar conta
-
-</a>
-
-</p>
-
-</div>
-
-</section>
-
-</div>
+</button>
 
 
-<!-- ÁREA DO ALUNO -->
-
-<div id="aluno" class="pagina">
-
-<section>
-
-<h2 class="titulo">
-🎓 Área do Aluno
-</h2>
-
-<div class="caixa">
-
-<h2 id="boasVindas">
-Bem-vindo!
-</h2>
-
-<div class="info">
-
-<p>
-<strong>Nome:</strong>
-<span id="alunoNome"></span>
-</p>
-
-<p>
-<strong>E-mail:</strong>
-<span id="alunoEmail"></span>
-</p>
-
-<p>
-<strong>Telefone:</strong>
-<span id="alunoTelefone"></span>
-</p>
-
-<p>
-<strong>Curso:</strong>
-<span id="alunoCurso"></span>
-</p>
-
-</div>
+</form>
 
 
-<h3 style="margin-top:25px;color:#123c69;">
-📚 Meu Curso
-</h3>
+<div class="link">
 
-<p style="margin-top:10px;line-height:1.6;">
-O conteúdo das aulas será disponibilizado
-aqui quando a plataforma de cursos estiver
-configurada.
-</p>
-
-
-<button
-class="botao"
-onclick="sair()">
-
-🚪 Sair da Conta
-
+<button onclick="mostrarPagina('login')">
+Já tenho uma conta
 </button>
 
 </div>
 
-</section>
+
+<div class="link">
+
+<button onclick="mostrarPagina('plataforma')">
+← Voltar
+</button>
 
 </div>
 
+</div>
 
-<!-- CONTACTO -->
-
-<section class="contacto">
-
-<h2>
-📞 Contacto
-</h2>
-
-<p style="margin-top:10px;">
-Caixote Cursos Online
-</p>
-
-<p style="margin-top:8px;">
-E-mail: delciocaixote1@gmail.com
-</p>
+</div>
 
 </section>
 
-
-<!-- RODAPÉ -->
-
-<footer>
-
-<p>
-© 2026 Caixote Cursos Online
-</p>
-
-<p style="margin-top:8px;">
-Todos os direitos reservados.
-</p>
-
-</footer>
 
 
 <script>
 
-/* =========================
-   NAVEGAÇÃO
-========================= */
+/* ================= NAVEGAÇÃO ================= */
 
-function mostrarPagina(nome){
+function esconderTudo(){
 
     document
-    .querySelectorAll(".pagina")
-    .forEach(function(pagina){
+    .getElementById("paginaPrincipal")
+    .classList.remove("ativa");
 
-        pagina.style.display="none";
+    document
+    .getElementById("paginaPlataforma")
+    .classList.remove("ativa");
 
-    });
+    document
+    .getElementById("paginaLogin")
+    .classList.remove("ativa");
 
+    document
+    .getElementById("paginaCadastro")
+    .classList.remove("ativa");
 
-    const pagina =
-    document.getElementById(nome);
-
-
-    if(pagina){
-
-        pagina.style.display="block";
-
-    }
-
-    window.scrollTo(0,0);
 }
 
 
-/* =========================
-   INÍCIO
-========================= */
+function mostrarPagina(pagina){
 
-mostrarPagina("inicio");
+    esconderTudo();
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 
-/* =========================
-   CRIAÇÃO DA CONTA
-========================= */
+    if(pagina === "inicio" ||
+       pagina === "cursos" ||
+       pagina === "contactos"){
 
-document
-.getElementById("formInscricao")
-.addEventListener("submit",function(event){
+        document
+        .getElementById("paginaPrincipal")
+        .classList.add("ativa");
+
+
+        if(pagina !== "inicio"){
+
+            setTimeout(function(){
+
+                const elemento =
+                document.getElementById(pagina);
+
+                if(elemento){
+
+                    elemento.scrollIntoView({
+                        behavior:"smooth"
+                    });
+
+                }
+
+            },100);
+
+        }
+
+    }
+
+
+    if(pagina === "plataforma"){
+
+        document
+        .getElementById("paginaPlataforma")
+        .classList.add("ativa");
+
+    }
+
+
+    if(pagina === "login"){
+
+        document
+        .getElementById("paginaLogin")
+        .classList.add("ativa");
+
+    }
+
+
+    if(pagina === "cadastro"){
+
+        document
+        .getElementById("paginaCadastro")
+        .classList.add("ativa");
+
+    }
+
+}
+
+
+/* ================= LOGIN DEMONSTRAÇÃO ================= */
+
+function loginDemo(event){
+
+    event.preventDefault();
+
+    alert(
+        "A tela de login está funcionando como demonstração. " +
+        "Para autenticação real, será necessário ligar a plataforma " +
+        "a um sistema seguro de contas e base de dados."
+    );
+
+}
+
+
+/* ================= CADASTRO DEMONSTRAÇÃO ================= */
+
+function cadastroDemo(event){
+
+    event.preventDefault();
+
+    const formulario =
+    document.getElementById("formCadastro");
 
     const senha =
-    document.getElementById("senha").value;
+    formulario.querySelector(
+        'input[name="senha"]'
+    ).value;
 
     const confirmar =
-    document.getElementById("confirmarSenha").value;
-
-    const mensagem =
-    document.getElementById("mensagemInscricao");
+    formulario.querySelector(
+        'input[name="confirmar_senha"]'
+    ).value;
 
 
     if(senha !== confirmar){
 
-        event.preventDefault();
-
-        mensagem.className="mensagem erro";
-
-        mensagem.style.display="block";
-
-        mensagem.textContent=
-        "❌ As palavras-passe não são iguais.";
-
-        return;
-    }
-
-
-    if(senha.length < 6){
-
-        event.preventDefault();
-
-        mensagem.className="mensagem erro";
-
-        mensagem.style.display="block";
-
-        mensagem.textContent=
-        "❌ A palavra-passe deve ter pelo menos 6 caracteres.";
-
-        return;
-    }
-
-
-    /*
-      IMPORTANTE:
-      A palavra-passe não é enviada
-      para o FormSubmit.
-
-      Guardamos apenas uma versão
-      local para demonstração.
-    */
-
-    const nome =
-    document.getElementById("nome").value;
-
-    const telefone =
-    document.getElementById("telefone").value;
-
-    const email =
-    document.getElementById("email")
-    .value
-    .trim()
-    .toLowerCase();
-
-    const curso =
-    document.getElementById("curso").value;
-
-
-    const aluno = {
-
-        nome:nome,
-
-        telefone:telefone,
-
-        email:email,
-
-        curso:curso,
-
-        senha:senha
-
-    };
-
-
-    localStorage.setItem(
-        "caixote_aluno_"+email,
-        JSON.stringify(aluno)
-    );
-
-
-    localStorage.setItem(
-        "caixote_email_logado",
-        email
-    );
-
-
-    /*
-      NÃO usamos preventDefault aqui.
-
-      O formulário continuará para o
-      FormSubmit e enviará a inscrição
-      para o seu e-mail.
-    */
-
-});
-
-
-/* =========================
-   LOGIN
-========================= */
-
-document
-.getElementById("formLogin")
-.addEventListener("submit",function(event){
-
-    event.preventDefault();
-
-
-    const email =
-    document.getElementById("loginEmail")
-    .value
-    .trim()
-    .toLowerCase();
-
-
-    const senha =
-    document.getElementById("loginSenha")
-    .value;
-
-
-    const mensagem =
-    document.getElementById("mensagemLogin");
-
-
-    const dados =
-    localStorage.getItem(
-        "caixote_aluno_"+email
-    );
-
-
-    if(!dados){
-
-        mensagem.className="mensagem erro";
-
-        mensagem.style.display="block";
-
-        mensagem.textContent=
-        "❌ Conta não encontrada neste dispositivo.";
+        alert("As senhas não coincidem.");
 
         return;
 
     }
 
 
-    const aluno =
-    JSON.parse(dados);
-
-
-    if(aluno.senha !== senha){
-
-        mensagem.className="mensagem erro";
-
-        mensagem.style.display="block";
-
-        mensagem.textContent=
-        "❌ Palavra-passe incorreta.";
-
-        return;
-
-    }
-
-
-    localStorage.setItem(
-        "caixote_email_logado",
-        email
+    alert(
+        "O formulário foi preenchido corretamente. " +
+        "A plataforma precisa de um servidor seguro " +
+        "para guardar os dados e criar a conta do aluno."
     );
 
-
-    carregarAluno(aluno);
-
-});
-
-
-/* =========================
-   CARREGAR ÁREA DO ALUNO
-========================= */
-
-function carregarAluno(aluno){
-
-    document.getElementById("boasVindas")
-    .textContent=
-    "Bem-vindo, "+aluno.nome+"!";
-
-
-    document.getElementById("alunoNome")
-    .textContent=aluno.nome;
-
-
-    document.getElementById("alunoEmail")
-    .textContent=aluno.email;
-
-
-    document.getElementById("alunoTelefone")
-    .textContent=aluno.telefone;
-
-
-    document.getElementById("alunoCurso")
-    .textContent=aluno.curso;
-
-
-    mostrarPagina("aluno");
-}
-
-
-/* =========================
-   SAIR
-========================= */
-
-function sair(){
-
-    localStorage.removeItem(
-        "caixote_email_logado"
-    );
-
-
-    mostrarPagina("inicio");
-}
-
-
-/* =========================
-   VERIFICAR SESSÃO
-========================= */
-
-const emailLogado =
-localStorage.getItem(
-    "caixote_email_logado"
-);
-
-
-if(emailLogado){
-
-    const dados =
-    localStorage.getItem(
-        "caixote_aluno_"+emailLogado
-    );
-
-
-    if(dados){
-
-        carregarAluno(
-            JSON.parse(dados)
-        );
-
-    }
 }
 
 </script>
+
 
 </body>
 </html>
