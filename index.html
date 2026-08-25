@@ -6,31 +6,29 @@
 
 <title>Caixote Cursos Online</title>
 
-<meta name="description"
-content="Caixote Cursos Online - Aprenda, desenvolva competências e construa o seu futuro.">
-
 <style>
 
-/* ==============================
-   CORES PRINCIPAIS
-================================ */
+/* =========================
+   CORES
+========================= */
 
 :root{
-    --azul:#082b52;
-    --azul2:#0d3d70;
-    --amarelo:#f2b705;
-    --amarelo2:#d99d00;
+    --azul:#061f3d;
+    --azul2:#0b315d;
+    --azul3:#124577;
+    --amarelo:#f5b900;
+    --amarelo2:#ffd34d;
     --branco:#ffffff;
-    --fundo:#f5f7fa;
-    --texto:#182536;
-    --cinza:#667386;
-    --borda:#e1e6ec;
+    --cinza:#d8e2ed;
+    --cinza2:#aebdcd;
+    --erro:#ff6b6b;
+    --sucesso:#48d597;
 }
 
 
-/* ==============================
+/* =========================
    GERAL
-================================ */
+========================= */
 
 *{
     margin:0;
@@ -44,8 +42,8 @@ html{
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:var(--fundo);
-    color:var(--texto);
+    background:var(--azul);
+    color:white;
     line-height:1.6;
 }
 
@@ -63,13 +61,13 @@ textarea{
 }
 
 
-/* ==============================
+/* =========================
    CABEÇALHO
-================================ */
+========================= */
 
 header{
-    background:var(--branco);
-    border-bottom:1px solid var(--borda);
+    background:var(--azul);
+    border-bottom:1px solid rgba(255,255,255,.10);
     position:sticky;
     top:0;
     z-index:1000;
@@ -84,83 +82,74 @@ header{
 
 .logo{
     text-decoration:none;
-    font-size:22px;
+    color:white;
+    font-size:21px;
     font-weight:800;
-    color:var(--azul);
 }
 
 .logo span{
-    color:var(--amarelo2);
+    color:var(--amarelo);
 }
 
 .nav-links{
     display:flex;
     align-items:center;
-    gap:27px;
+    gap:25px;
 }
 
 .nav-links a{
     text-decoration:none;
-    color:#344154;
-    font-size:15px;
+    color:#e6edf5;
+    font-size:14px;
     font-weight:600;
 }
 
 .nav-links a:hover{
-    color:var(--azul2);
+    color:var(--amarelo);
 }
 
-.login-button{
-    background:var(--azul);
-    color:white !important;
+.login-btn{
+    background:var(--amarelo);
+    color:var(--azul) !important;
     padding:10px 18px;
     border-radius:7px;
 }
 
-.login-button:hover{
-    background:var(--amarelo2) !important;
-    color:white !important;
+.login-btn:hover{
+    background:var(--amarelo2);
 }
 
-.menu-button{
+.menu{
     display:none;
     font-size:25px;
-    color:var(--azul);
     cursor:pointer;
 }
 
 
-/* ==============================
+/* =========================
    HERO
-================================ */
+========================= */
 
 .hero{
-    background:
-    linear-gradient(
-        120deg,
-        #eaf1f8,
-        #ffffff 55%,
-        #fff8df
-    );
-    padding:90px 0;
+    background:var(--azul);
+    padding:90px 0 100px;
 }
 
 .hero-content{
     display:grid;
     grid-template-columns:1.15fr .85fr;
-    align-items:center;
     gap:65px;
+    align-items:center;
 }
 
 .hero h1{
     font-size:52px;
     line-height:1.12;
     margin-bottom:22px;
-    color:var(--azul);
 }
 
 .hero h1 span{
-    color:var(--amarelo2);
+    color:var(--amarelo);
 }
 
 .hero p{
@@ -170,95 +159,90 @@ header{
     margin-bottom:30px;
 }
 
-.hero-buttons{
+.buttons{
     display:flex;
-    gap:13px;
+    gap:12px;
     flex-wrap:wrap;
 }
 
-.button{
-    display:inline-block;
+.btn{
+    border:none;
     padding:13px 22px;
     border-radius:7px;
     font-size:15px;
-    font-weight:700;
+    font-weight:bold;
     cursor:pointer;
-    border:none;
+    text-decoration:none;
+    display:inline-block;
 }
 
-.button-primary{
-    background:var(--azul);
-    color:white;
-}
-
-.button-primary:hover{
-    background:var(--azul2);
-}
-
-.button-yellow{
+.btn-yellow{
     background:var(--amarelo);
     color:var(--azul);
 }
 
-.button-yellow:hover{
+.btn-yellow:hover{
     background:var(--amarelo2);
-    color:white;
 }
 
-.button-outline{
-    background:white;
-    border:1px solid var(--azul);
+.btn-outline{
+    background:transparent;
+    border:1px solid var(--amarelo);
+    color:var(--amarelo);
+}
+
+.btn-outline:hover{
+    background:var(--amarelo);
     color:var(--azul);
 }
 
-.hero-panel{
-    background:white;
+.hero-card{
+    background:var(--azul2);
+    border:1px solid rgba(255,255,255,.12);
+    border-top:4px solid var(--amarelo);
     border-radius:14px;
-    padding:35px;
-    border:1px solid var(--borda);
-    border-top:5px solid var(--amarelo);
-    box-shadow:0 15px 40px rgba(8,43,82,.12);
+    padding:32px;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
 }
 
-.hero-panel-icon{
-    width:50px;
-    height:50px;
-    background:var(--azul);
-    color:var(--amarelo);
+.hero-icon{
+    width:48px;
+    height:48px;
     border-radius:8px;
+    background:var(--amarelo);
+    color:var(--azul);
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:22px;
+    font-weight:bold;
     margin-bottom:20px;
 }
 
-.hero-panel h3{
-    color:var(--azul);
+.hero-card h3{
     margin-bottom:10px;
 }
 
-.hero-panel p{
-    font-size:15px;
+.hero-card p{
+    font-size:14px;
     margin-bottom:20px;
 }
 
-.stat{
+.info-line{
     display:flex;
     justify-content:space-between;
-    padding:12px 0;
-    border-top:1px solid #edf0f4;
+    padding:11px 0;
+    border-top:1px solid rgba(255,255,255,.10);
     font-size:14px;
 }
 
-.stat strong{
-    color:var(--azul2);
+.info-line strong{
+    color:var(--amarelo);
 }
 
 
-/* ==============================
+/* =========================
    SEÇÕES
-================================ */
+========================= */
 
 section{
     padding:75px 0;
@@ -266,13 +250,11 @@ section{
 
 .section-title{
     text-align:center;
-    max-width:700px;
-    margin:0 auto 45px;
+    margin-bottom:45px;
 }
 
 .section-title h2{
     font-size:34px;
-    color:var(--azul);
     margin-bottom:10px;
 }
 
@@ -281,178 +263,219 @@ section{
 }
 
 
-/* ==============================
+/* =========================
    CURSOS
-================================ */
+========================= */
+
+#cursos{
+    background:var(--azul2);
+}
 
 .courses{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:22px;
+    gap:20px;
 }
 
 .course-card{
-    background:white;
-    border:1px solid var(--borda);
+    background:var(--azul3);
+    border:1px solid rgba(255,255,255,.10);
     border-radius:12px;
     padding:25px;
-    border-top:3px solid var(--amarelo);
     transition:.25s;
 }
 
 .course-card:hover{
     transform:translateY(-5px);
-    box-shadow:0 12px 30px rgba(8,43,82,.12);
+    border-color:var(--amarelo);
+    box-shadow:0 12px 30px rgba(0,0,0,.20);
 }
 
 .course-icon{
-    width:43px;
-    height:43px;
-    border-radius:8px;
-    background:#edf3f9;
+    width:42px;
+    height:42px;
+    background:var(--amarelo);
     color:var(--azul);
+    border-radius:7px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:17px;
+    font-size:14px;
     font-weight:bold;
-    margin-bottom:18px;
+    margin-bottom:17px;
 }
 
 .course-card h3{
-    color:var(--azul);
-    margin-bottom:9px;
-    font-size:19px;
+    margin-bottom:8px;
 }
 
 .course-card p{
     color:var(--cinza);
     font-size:14px;
-    margin-bottom:18px;
+    margin-bottom:16px;
 }
 
 .course-link{
     border:none;
     background:none;
-    color:var(--azul2);
-    font-weight:700;
+    color:var(--amarelo);
+    font-weight:bold;
     cursor:pointer;
-    padding:0;
-}
-
-.course-link:hover{
-    color:var(--amarelo2);
 }
 
 
-/* ==============================
+/* =========================
    PROFESSOR
-================================ */
+========================= */
 
-.teacher-section{
-    background:white;
+#professor{
+    background:var(--azul);
 }
 
 .teacher{
-    display:grid;
-    grid-template-columns:260px 1fr;
-    gap:50px;
-    align-items:center;
-    background:#f5f8fb;
-    border:1px solid var(--borda);
+    background:var(--azul2);
+    border:1px solid rgba(255,255,255,.10);
     border-radius:14px;
     padding:40px;
+    display:grid;
+    grid-template-columns:220px 1fr;
+    align-items:center;
+    gap:45px;
 }
 
 .teacher-photo{
-    width:180px;
-    height:180px;
+    width:170px;
+    height:170px;
     border-radius:50%;
-    background:var(--azul);
+    background:var(--amarelo);
+    color:var(--azul);
     display:flex;
     align-items:center;
     justify-content:center;
-    margin:auto;
-    color:var(--amarelo);
-    font-size:50px;
+    font-size:48px;
     font-weight:bold;
-    border:6px solid var(--amarelo);
+    border:5px solid white;
+    margin:auto;
 }
 
 .teacher h2{
-    color:var(--azul);
+    color:white;
     margin-bottom:3px;
 }
 
 .teacher h4{
-    color:var(--amarelo2);
-    margin-bottom:18px;
+    color:var(--amarelo);
+    margin-bottom:15px;
 }
 
 .teacher p{
-    color:#5f6b7b;
-}
-
-
-/* ==============================
-   ÁREA DE INSCRIÇÃO
-================================ */
-
-#areaInscricao{
-    display:none;
-    background:#edf2f7;
-    min-height:100vh;
-}
-
-.registration-header{
-    text-align:center;
-    margin-bottom:35px;
-}
-
-.registration-header h2{
-    font-size:34px;
-    color:var(--azul);
-}
-
-.registration-header p{
     color:var(--cinza);
 }
 
-.form-container{
-    max-width:750px;
+
+/* =========================
+   CONTACTO
+========================= */
+
+#contacto{
+    background:var(--amarelo);
+    color:var(--azul);
+    text-align:center;
+}
+
+#contacto h2{
+    font-size:32px;
+}
+
+#contacto p{
+    margin:8px auto 22px;
+    max-width:600px;
+}
+
+.whatsapp-buttons{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.whatsapp{
+    background:var(--azul);
+    color:white;
+    padding:11px 19px;
+    border-radius:7px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+#areaInscricao{
+    display:none;
+    background:var(--azul);
+    min-height:100vh;
+}
+
+.form-header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.form-header h2{
+    font-size:34px;
+}
+
+.form-header p{
+    color:var(--cinza);
+}
+
+.form-box{
+    max-width:760px;
     margin:auto;
-    background:white;
-    padding:35px;
+    background:var(--branco);
+    color:#172436;
     border-radius:14px;
+    padding:32px;
     border-top:5px solid var(--amarelo);
-    border-left:1px solid var(--borda);
-    border-right:1px solid var(--borda);
-    border-bottom:1px solid var(--borda);
-    box-shadow:0 10px 35px rgba(8,43,82,.09);
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.form-title{
+    color:var(--azul);
+    border-bottom:2px solid #e7ebef;
+    padding-bottom:8px;
+    margin:22px 0 18px;
+    font-size:18px;
+}
+
+.form-title:first-child{
+    margin-top:0;
 }
 
 .form-group{
-    margin-bottom:17px;
+    margin-bottom:16px;
 }
 
 .form-group label{
     display:block;
-    font-weight:700;
     font-size:14px;
-    margin-bottom:7px;
-    color:#303c4d;
+    font-weight:bold;
+    margin-bottom:6px;
 }
 
 .required{
-    color:#c62828;
+    color:#d40000;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea{
     width:100%;
-    padding:12px 13px;
-    border:1px solid #cfd6df;
+    padding:12px;
+    border:1px solid #ccd5df;
     border-radius:7px;
     outline:none;
     font-size:15px;
@@ -462,129 +485,195 @@ section{
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus{
-    border-color:var(--azul);
-    box-shadow:0 0 0 3px rgba(8,43,82,.08);
+    border-color:var(--azul2);
+    box-shadow:0 0 0 3px rgba(8,43,82,.10);
 }
 
 .form-group textarea{
-    min-height:100px;
+    min-height:90px;
     resize:vertical;
 }
 
-.form-section-title{
-    margin:25px 0 17px;
-    padding-bottom:8px;
-    border-bottom:2px solid #edf0f4;
-    color:var(--azul);
-    font-size:18px;
+.password-info{
+    color:#667386;
+    font-size:12px;
+    margin-top:5px;
 }
 
-.submit-button{
+.submit-btn{
     width:100%;
-    border:none;
     padding:14px;
-    background:var(--azul);
-    color:white;
+    border:none;
     border-radius:7px;
+    background:var(--amarelo);
+    color:var(--azul);
     font-size:16px;
-    font-weight:700;
+    font-weight:bold;
     cursor:pointer;
 }
 
-.submit-button:hover{
-    background:var(--azul2);
+.submit-btn:hover{
+    background:var(--amarelo2);
 }
 
-.submit-button:disabled{
-    background:#8994a1;
+.submit-btn:disabled{
+    opacity:.6;
     cursor:not-allowed;
 }
 
-.back-button{
+.back-btn{
     display:block;
-    width:max-content;
     margin:0 auto 25px;
-    color:var(--azul);
-    background:white;
-    border:1px solid var(--azul);
-    padding:9px 17px;
+    padding:10px 18px;
+    border:1px solid var(--amarelo);
+    background:transparent;
+    color:var(--amarelo);
     border-radius:7px;
     cursor:pointer;
-    font-weight:700;
 }
 
-.back-button:hover{
-    background:var(--azul);
-    color:white;
+.back-btn:hover{
+    background:var(--amarelo);
+    color:var(--azul);
 }
 
 #resultado{
-    display:none;
-    margin-top:18px;
-    padding:13px;
+    margin-top:15px;
+    padding:12px;
     border-radius:7px;
     text-align:center;
-    font-weight:700;
+    display:none;
 }
 
 .success{
     display:block !important;
-    background:#dff4e4;
-    color:#17662c;
+    background:#d9f8e9;
+    color:#12663e;
 }
 
 .error{
     display:block !important;
-    background:#ffe2e2;
+    background:#ffe0e0;
     color:#a51d1d;
 }
 
 
-/* ==============================
-   CONTACTO
-================================ */
+/* =========================
+   LOGIN
+========================= */
 
-.contact{
+#areaLogin{
+    display:none;
     background:var(--azul);
-    color:white;
-    text-align:center;
+    min-height:100vh;
+    padding:75px 0;
+}
+
+.login-box{
+    max-width:450px;
+    margin:auto;
+    background:white;
+    color:#172436;
+    border-radius:14px;
+    padding:32px;
     border-top:5px solid var(--amarelo);
 }
 
-.contact h2{
-    font-size:32px;
-    margin-bottom:8px;
+.login-box h2{
+    color:var(--azul);
+    text-align:center;
+    margin-bottom:7px;
 }
 
-.contact p{
-    max-width:600px;
-    margin:0 auto 25px;
-    color:#dce7f2;
+.login-box > p{
+    text-align:center;
+    color:#667386;
+    margin-bottom:25px;
 }
 
-.whatsapp{
-    display:inline-block;
+.login-box input{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccd5df;
+    border-radius:7px;
+    font-size:15px;
+}
+
+.login-box button{
+    width:100%;
+    padding:13px;
+    border:none;
+    border-radius:7px;
     background:var(--amarelo);
     color:var(--azul);
-    padding:12px 22px;
-    border-radius:7px;
-    font-weight:700;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-.whatsapp:hover{
+.login-box button:hover{
+    background:var(--amarelo2);
+}
+
+.login-back{
+    display:block;
+    margin:18px auto 0;
+    background:none !important;
+    color:var(--azul) !important;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.70);
+    z-index:3000;
+    padding:20px;
+}
+
+.modal-box{
+    max-width:550px;
+    margin:10% auto;
     background:white;
+    color:#172436;
+    padding:30px;
+    border-radius:12px;
+    border-top:5px solid var(--amarelo);
+    position:relative;
+}
+
+.modal-box h2{
+    color:var(--azul);
+    margin-bottom:10px;
+}
+
+.modal-box p{
+    color:#667386;
+    margin-bottom:20px;
+}
+
+.close{
+    position:absolute;
+    right:17px;
+    top:8px;
+    font-size:28px;
+    cursor:pointer;
 }
 
 
-/* ==============================
+/* =========================
    RODAPÉ
-================================ */
+========================= */
 
 footer{
-    background:#061a30;
-    color:white;
+    background:#031327;
     text-align:center;
-    padding:28px 20px;
+    padding:28px 15px;
 }
 
 footer strong{
@@ -592,58 +681,15 @@ footer strong{
 }
 
 footer p{
-    color:#9ea9b8;
+    color:#91a1b3;
     font-size:13px;
-    margin-top:6px;
+    margin-top:5px;
 }
 
 
-/* ==============================
-   MODAL
-================================ */
-
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(4,19,35,.68);
-    z-index:3000;
-    padding:20px;
-}
-
-.modal-box{
-    background:white;
-    max-width:550px;
-    margin:10% auto;
-    padding:30px;
-    border-radius:12px;
-    position:relative;
-    border-top:4px solid var(--amarelo);
-}
-
-.close{
-    position:absolute;
-    right:18px;
-    top:8px;
-    font-size:28px;
-    cursor:pointer;
-    color:#657184;
-}
-
-.modal-box h2{
-    color:var(--azul);
-    margin-bottom:12px;
-}
-
-.modal-box p{
-    color:var(--cinza);
-    margin-bottom:20px;
-}
-
-
-/* ==============================
-   RESPONSIVO
-================================ */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:850px){
 
@@ -651,16 +697,12 @@ footer p{
         display:none;
     }
 
-    .menu-button{
+    .menu{
         display:block;
     }
 
     .hero-content{
         grid-template-columns:1fr;
-    }
-
-    .hero{
-        padding:65px 0;
     }
 
     .hero h1{
@@ -687,6 +729,10 @@ footer p{
         font-size:18px;
     }
 
+    .hero{
+        padding:65px 0;
+    }
+
     .hero h1{
         font-size:35px;
     }
@@ -699,20 +745,16 @@ footer p{
         grid-template-columns:1fr;
     }
 
-    section{
-        padding:55px 0;
-    }
-
-    .section-title h2{
-        font-size:28px;
-    }
-
-    .form-container{
+    .form-box{
         padding:22px 18px;
     }
 
     .teacher{
         padding:25px 18px;
+    }
+
+    section{
+        padding:55px 0;
     }
 
 }
@@ -724,37 +766,43 @@ footer p{
 <body>
 
 
-<!-- =================================
+<!-- =========================
      CABEÇALHO
-================================= -->
+========================= -->
 
 <header>
 
 <div class="container navbar">
 
-<a href="#inicio" class="logo">
+<a href="#" class="logo" onclick="mostrarInicio()">
 Caixote <span>Cursos Online</span>
 </a>
 
 <nav class="nav-links">
 
-<a href="#inicio">Início</a>
+<a href="#" onclick="mostrarInicio()">
+Início
+</a>
 
-<a href="#cursos">Cursos</a>
+<a href="#cursos">
+Cursos
+</a>
 
-<a href="#professor">Professor</a>
+<a href="#professor">
+Professor
+</a>
 
-<a href="#contacto">Contacto</a>
+<a href="#contacto">
+Contacto
+</a>
 
-<a href="#"
-class="login-button"
-onclick="mostrarLogin(event)">
+<a href="#" class="login-btn" onclick="abrirLogin(event)">
 Iniciar sessão
 </a>
 
 </nav>
 
-<div class="menu-button">
+<div class="menu">
 ☰
 </div>
 
@@ -763,35 +811,34 @@ Iniciar sessão
 </header>
 
 
-<!-- =================================
+<!-- =========================
      PÁGINA PRINCIPAL
-================================= -->
+========================= -->
 
 <main id="paginaInicial">
 
 
-<section class="hero" id="inicio">
+<section class="hero">
 
 <div class="container hero-content">
 
 <div>
 
 <h1>
-Aprenda novas competências
-<span>para o seu futuro.</span>
+Aprenda hoje.
+<span>Construa o seu futuro.</span>
 </h1>
 
 <p>
 Bem-vindo ao Caixote Cursos Online.
-Uma plataforma criada para facilitar
-o acesso à aprendizagem e ao
-desenvolvimento de novas competências.
+Aprenda novas competências através
+de uma plataforma simples e acessível.
 </p>
 
-<div class="hero-buttons">
+<div class="buttons">
 
 <button
-class="button button-primary"
+class="btn btn-yellow"
 onclick="abrirInscricao()">
 
 Entrar na plataforma de inscrição
@@ -800,9 +847,9 @@ Entrar na plataforma de inscrição
 
 <a
 href="#cursos"
-class="button button-outline">
+class="btn btn-outline">
 
-Conhecer os cursos
+Ver cursos
 
 </a>
 
@@ -811,34 +858,34 @@ Conhecer os cursos
 </div>
 
 
-<div class="hero-panel">
+<div class="hero-card">
 
-<div class="hero-panel-icon">
-✓
+<div class="hero-icon">
+C
 </div>
 
 <h3>
-Comece a sua formação
+Caixote Cursos Online
 </h3>
 
 <p>
-Escolha uma formação e faça a sua
-inscrição de forma simples e rápida.
+Formação, conhecimento e desenvolvimento
+de competências para o futuro.
 </p>
 
-<div class="stat">
-<span>Formações</span>
-<strong>Online</strong>
-</div>
-
-<div class="stat">
-<span>Inscrição</span>
-<strong>Online</strong>
-</div>
-
-<div class="stat">
+<div class="info-line">
 <span>Professor</span>
 <strong>Caixote</strong>
+</div>
+
+<div class="info-line">
+<span>Modalidade</span>
+<strong>Online</strong>
+</div>
+
+<div class="info-line">
+<span>Inscrição</span>
+<strong>Online</strong>
 </div>
 
 </div>
@@ -848,9 +895,7 @@ inscrição de forma simples e rápida.
 </section>
 
 
-<!-- =================================
-     CURSOS
-================================= -->
+<!-- CURSOS -->
 
 <section id="cursos">
 
@@ -859,12 +904,11 @@ inscrição de forma simples e rápida.
 <div class="section-title">
 
 <h2>
-Cursos disponíveis
+Cursos
 </h2>
 
 <p>
-Escolha uma área e conheça melhor
-cada formação.
+Conheça algumas das formações disponíveis.
 </p>
 
 </div>
@@ -875,21 +919,24 @@ cada formação.
 
 <div class="course-card">
 
-<div class="course-icon">IF</div>
+<div class="course-icon">
+IF
+</div>
 
-<h3>Informática Básica</h3>
+<h3>
+Informática Básica
+</h3>
 
 <p>
 Aprenda os fundamentos da informática
-e utilização das principais ferramentas
-digitais.
+e das principais ferramentas digitais.
 </p>
 
 <button
 class="course-link"
 onclick="abrirCurso(
 'Informática Básica',
-'Aprenda os fundamentos da informática, utilização do computador, documentos, internet e ferramentas digitais.'
+'Aprenda os fundamentos da informática, utilização do computador, documentos e ferramentas digitais.'
 )">
 
 Ver informações →
@@ -901,14 +948,17 @@ Ver informações →
 
 <div class="course-card">
 
-<div class="course-icon">PG</div>
+<div class="course-icon">
+PG
+</div>
 
-<h3>Programação</h3>
+<h3>
+Programação
+</h3>
 
 <p>
 Conheça os fundamentos da programação
-e comece a desenvolver os seus primeiros
-projetos.
+e desenvolva os seus primeiros projetos.
 </p>
 
 <button
@@ -927,12 +977,16 @@ Ver informações →
 
 <div class="course-card">
 
-<div class="course-icon">WB</div>
+<div class="course-icon">
+WB
+</div>
 
-<h3>Desenvolvimento Web</h3>
+<h3>
+Desenvolvimento Web
+</h3>
 
 <p>
-Aprenda a construir páginas modernas
+Aprenda a criar páginas e projetos
 para a Internet.
 </p>
 
@@ -940,7 +994,7 @@ para a Internet.
 class="course-link"
 onclick="abrirCurso(
 'Desenvolvimento Web',
-'Aprenda HTML, CSS e JavaScript e descubra como criar páginas web modernas.'
+'Aprenda HTML, CSS e JavaScript para criar páginas web.'
 )">
 
 Ver informações →
@@ -952,20 +1006,24 @@ Ver informações →
 
 <div class="course-card">
 
-<div class="course-icon">DG</div>
+<div class="course-icon">
+DG
+</div>
 
-<h3>Design Gráfico</h3>
+<h3>
+Design Gráfico
+</h3>
 
 <p>
-Desenvolva conhecimentos para criação
-de conteúdos visuais.
+Aprenda princípios fundamentais de
+design e comunicação visual.
 </p>
 
 <button
 class="course-link"
 onclick="abrirCurso(
 'Design Gráfico',
-'Aprenda princípios de composição, design e criação de conteúdos digitais.'
+'Conheça os princípios de composição e criação de conteúdos visuais.'
 )">
 
 Ver informações →
@@ -977,13 +1035,17 @@ Ver informações →
 
 <div class="course-card">
 
-<div class="course-icon">MD</div>
+<div class="course-icon">
+MD
+</div>
 
-<h3>Marketing Digital</h3>
+<h3>
+Marketing Digital
+</h3>
 
 <p>
-Aprenda conceitos fundamentais para
-divulgar projetos e negócios online.
+Aprenda conceitos fundamentais de
+marketing no ambiente digital.
 </p>
 
 <button
@@ -1002,12 +1064,16 @@ Ver informações →
 
 <div class="course-card">
 
-<div class="course-icon">+</div>
+<div class="course-icon">
++
+</div>
 
-<h3>Novas formações</h3>
+<h3>
+Novas formações
+</h3>
 
 <p>
-Novos cursos poderão ser adicionados
+Novos cursos serão adicionados
 à plataforma.
 </p>
 
@@ -1015,7 +1081,7 @@ Novos cursos poderão ser adicionados
 class="course-link"
 onclick="abrirCurso(
 'Novas formações',
-'Novas formações serão adicionadas ao Caixote Cursos Online.'
+'Novas formações serão adicionadas futuramente.'
 )">
 
 Ver informações →
@@ -1031,11 +1097,9 @@ Ver informações →
 </section>
 
 
-<!-- =================================
-     PROFESSOR
-================================= -->
+<!-- PROFESSOR -->
 
-<section class="teacher-section" id="professor">
+<section id="professor">
 
 <div class="container">
 
@@ -1046,7 +1110,7 @@ Professor Caixote
 </h2>
 
 <p>
-Conheça o responsável pelo projeto.
+Responsável pelo projeto Caixote Cursos Online.
 </p>
 
 </div>
@@ -1069,10 +1133,10 @@ Fundador do Caixote Cursos Online
 </h4>
 
 <p>
-O Caixote Cursos Online tem como objetivo
-facilitar o acesso à formação e ajudar
+O Caixote Cursos Online foi criado para
+facilitar o acesso à aprendizagem e ajudar
 estudantes e interessados a desenvolver
-competências úteis para a vida académica
+competências para a vida académica
 e profissional.
 </p>
 
@@ -1085,77 +1149,95 @@ e profissional.
 </section>
 
 
-<!-- =================================
-     CONTACTO
-================================= -->
+<!-- CONTACTO -->
 
-<section class="contact" id="contacto">
+<section id="contacto">
 
 <div class="container">
 
 <h2>
-Precisa de informações?
+Fale connosco
 </h2>
 
 <p>
-Entre em contacto através do WhatsApp
-para saber mais sobre os cursos e o
-processo de inscrição.
+Entre em contacto através de um dos
+nossos números de WhatsApp.
 </p>
+
+<div class="whatsapp-buttons">
 
 <a
 href="https://wa.me/258850313445"
 target="_blank"
 class="whatsapp">
 
-Falar pelo WhatsApp
+850 313 445
+
+</a>
+
+<a
+href="https://wa.me/258864576664"
+target="_blank"
+class="whatsapp">
+
+864 576 664
+
+</a>
+
+<a
+href="https://wa.me/258835316062"
+target="_blank"
+class="whatsapp">
+
+835 316 062
 
 </a>
 
 </div>
 
-</section>
+</div>
 
+</section>
 
 </main>
 
 
-<!-- =================================
-     ÁREA DE INSCRIÇÃO
-================================= -->
+<!-- =========================
+     INSCRIÇÃO
+========================= -->
 
 <section id="areaInscricao">
 
 <div class="container">
 
-<div class="registration-header">
+<div class="form-header">
 
 <h2>
 Plataforma de Inscrição
 </h2>
 
 <p>
-Preencha corretamente os seus dados.
+Crie a sua conta e faça a sua inscrição.
 </p>
 
 </div>
 
 
 <button
-class="back-button"
-onclick="fecharInscricao()">
+class="back-btn"
+onclick="mostrarInicio()">
 
-← Voltar para a página inicial
+← Voltar
 
 </button>
 
 
-<div class="form-container">
+<div class="form-box">
 
 <form id="formInscricao">
 
 
-<h3 class="form-section-title">
+<h3 class="form-title">
 Dados pessoais
 </h3>
 
@@ -1170,7 +1252,7 @@ Nome completo <span class="required">*</span>
 type="text"
 id="nome"
 required
-placeholder="Digite o seu nome completo">
+placeholder="Nome completo">
 
 </div>
 
@@ -1185,7 +1267,7 @@ Apelido <span class="required">*</span>
 type="text"
 id="apelido"
 required
-placeholder="Digite o seu apelido">
+placeholder="Apelido">
 
 </div>
 
@@ -1200,7 +1282,7 @@ Nome do pai <span class="required">*</span>
 type="text"
 id="nome_pai"
 required
-placeholder="Digite o nome completo do pai">
+placeholder="Nome completo do pai">
 
 </div>
 
@@ -1215,7 +1297,7 @@ Nome da mãe <span class="required">*</span>
 type="text"
 id="nome_mae"
 required
-placeholder="Digite o nome completo da mãe">
+placeholder="Nome completo da mãe">
 
 </div>
 
@@ -1230,7 +1312,7 @@ Número do BI <span class="required">*</span>
 type="text"
 id="numero_bi"
 required
-placeholder="Digite o número do BI">
+placeholder="Número do BI">
 
 </div>
 
@@ -1253,7 +1335,7 @@ placeholder="exemplo@email.com">
 <div class="form-group">
 
 <label>
-Número do WhatsApp <span class="required">*</span>
+WhatsApp <span class="required">*</span>
 </label>
 
 <input
@@ -1297,14 +1379,15 @@ required>
 <div class="form-group">
 
 <label>
-Província de nascimento
-<span class="required">*</span>
+Província de nascimento <span class="required">*</span>
 </label>
 
-<select id="provincia_nascimento" required>
+<select
+id="provincia_nascimento"
+required>
 
 <option value="">
--- Escolha a província --
+-- Escolha --
 </option>
 
 <option>Cabo Delgado</option>
@@ -1324,75 +1407,38 @@ Província de nascimento
 </div>
 
 
-<h3 class="form-section-title">
-Informações académicas
+<h3 class="form-title">
+Dados académicos
 </h3>
 
 
 <div class="form-group">
 
 <label>
-Escola / Instituição
-<span class="required">*</span>
+Escola / Instituição <span class="required">*</span>
 </label>
 
-<select id="escola" required>
+<select
+id="escola"
+required>
 
 <option value="">
 -- Escolha a escola --
 </option>
 
-<option>
-Escola Secundária de Nampula
-</option>
-
-<option>
-Escola Secundária de Muatala
-</option>
-
-<option>
-Escola Secundária de Napipine
-</option>
-
-<option>
-Escola Secundária de Namicopo
-</option>
-
-<option>
-Escola Secundária de Natikiri
-</option>
-
-<option>
-Escola Secundária de Marrere
-</option>
-
-<option>
-Escola Secundária de Rapale
-</option>
-
-<option>
-Escola Secundária de Monapo
-</option>
-
-<option>
-Escola Secundária de Angoche
-</option>
-
-<option>
-Escola Secundária da Ilha de Moçambique
-</option>
-
-<option>
-Universidade Rovuma
-</option>
-
-<option>
-Universidade Pedagógica
-</option>
-
-<option>
-Outra escola
-</option>
+<option>Escola Secundária de Nampula</option>
+<option>Escola Secundária de Muatala</option>
+<option>Escola Secundária de Napipine</option>
+<option>Escola Secundária de Namicopo</option>
+<option>Escola Secundária de Natikiri</option>
+<option>Escola Secundária de Marrere</option>
+<option>Escola Secundária de Rapale</option>
+<option>Escola Secundária de Monapo</option>
+<option>Escola Secundária de Angoche</option>
+<option>Escola Secundária da Ilha de Moçambique</option>
+<option>Universidade Rovuma</option>
+<option>Universidade Pedagógica</option>
+<option>Outra escola</option>
 
 </select>
 
@@ -1405,7 +1451,9 @@ Outra escola
 Curso <span class="required">*</span>
 </label>
 
-<select id="curso" required>
+<select
+id="curso"
+required>
 
 <option value="">
 -- Escolha o curso --
@@ -1423,6 +1471,47 @@ Curso <span class="required">*</span>
 </div>
 
 
+<h3 class="form-title">
+Segurança da conta
+</h3>
+
+
+<div class="form-group">
+
+<label>
+Palavra-passe <span class="required">*</span>
+</label>
+
+<input
+type="password"
+id="password"
+required
+minlength="6"
+placeholder="Crie uma palavra-passe">
+
+<div class="password-info">
+Mínimo de 6 caracteres.
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Confirmar palavra-passe <span class="required">*</span>
+</label>
+
+<input
+type="password"
+id="passwordConfirm"
+required
+minlength="6"
+placeholder="Digite novamente a palavra-passe">
+
+</div>
+
+
 <div class="form-group">
 
 <label>
@@ -1431,7 +1520,7 @@ Mensagem
 
 <textarea
 id="mensagem"
-placeholder="Escreva uma mensagem, se desejar">
+placeholder="Mensagem opcional">
 </textarea>
 
 </div>
@@ -1439,17 +1528,17 @@ placeholder="Escreva uma mensagem, se desejar">
 
 <button
 type="submit"
-class="submit-button"
+class="submit-btn"
 id="botao">
 
-Enviar inscrição
+Criar conta e enviar inscrição
 
 </button>
 
-</form>
-
 
 <div id="resultado"></div>
+
+</form>
 
 </div>
 
@@ -1458,9 +1547,105 @@ Enviar inscrição
 </section>
 
 
-<!-- =================================
+<!-- =========================
+     LOGIN
+========================= -->
+
+<section id="areaLogin">
+
+<div class="container">
+
+<div class="login-box">
+
+<h2>
+Iniciar sessão
+</h2>
+
+<p>
+Entre na sua conta do Caixote Cursos Online.
+</p>
+
+
+<form id="formLogin">
+
+<input
+type="email"
+id="loginEmail"
+required
+placeholder="Seu e-mail">
+
+
+<input
+type="password"
+id="loginPassword"
+required
+placeholder="Sua palavra-passe">
+
+
+<button type="submit">
+
+Entrar
+
+</button>
+
+</form>
+
+
+<button
+class="login-back"
+onclick="mostrarInicio()">
+
+← Voltar para o início
+
+</button>
+
+
+<div id="resultadoLogin"></div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     MODAL
+========================= -->
+
+<div
+class="modal"
+id="modalCurso">
+
+<div class="modal-box">
+
+<span
+class="close"
+onclick="fecharCurso()">
+
+×
+</span>
+
+<h2 id="tituloCurso"></h2>
+
+<p id="descricaoCurso"></p>
+
+<button
+class="btn btn-yellow"
+onclick="fecharCurso();abrirInscricao();">
+
+Inscrever-se
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- =========================
      RODAPÉ
-================================= -->
+========================= -->
 
 <footer>
 
@@ -1476,40 +1661,9 @@ Todos os direitos reservados.
 </footer>
 
 
-<!-- =================================
-     MODAL DOS CURSOS
-================================= -->
-
-<div class="modal" id="modalCurso">
-
-<div class="modal-box">
-
-<span
-class="close"
-onclick="fecharCurso()">
-×
-</span>
-
-<h2 id="tituloCurso"></h2>
-
-<p id="descricaoCurso"></p>
-
-<button
-class="button button-primary"
-onclick="fecharCurso(); abrirInscricao();">
-
-Inscrever-se
-
-</button>
-
-</div>
-
-</div>
-
-
-<!-- =================================
+<!-- =========================
      SUPABASE
-================================= -->
+========================= -->
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -1517,7 +1671,8 @@ Inscrever-se
 
 /*
 ================================================
-COLOQUE AQUI OS DADOS DO SUPABASE
+1. COLOQUE AQUI A SUA PROJECT URL
+2. COLOQUE AQUI A SUA CHAVE PUBLICÁVEL
 ================================================
 */
 
@@ -1537,17 +1692,38 @@ SUPABASE_KEY
 );
 
 
-/*
-================================================
-ABRIR INSCRIÇÃO
-================================================
-*/
+/* =========================
+   MOSTRAR INÍCIO
+========================= */
+
+function mostrarInicio(){
+
+document.getElementById("paginaInicial")
+.style.display="block";
+
+document.getElementById("areaInscricao")
+.style.display="none";
+
+document.getElementById("areaLogin")
+.style.display="none";
+
+window.scrollTo(0,0);
+
+}
+
+
+/* =========================
+   ABRIR INSCRIÇÃO
+========================= */
 
 function abrirInscricao(){
 
 document.getElementById("paginaInicial")
 .style.display="none";
 
+document.getElementById("areaLogin")
+.style.display="none";
+
 document.getElementById("areaInscricao")
 .style.display="block";
 
@@ -1556,18 +1732,23 @@ window.scrollTo(0,0);
 }
 
 
-/*
-================================================
-VOLTAR
-================================================
-*/
+/* =========================
+   ABRIR LOGIN
+========================= */
 
-function fecharInscricao(){
+function abrirLogin(event){
+
+if(event){
+event.preventDefault();
+}
+
+document.getElementById("paginaInicial")
+.style.display="none";
 
 document.getElementById("areaInscricao")
 .style.display="none";
 
-document.getElementById("paginaInicial")
+document.getElementById("areaLogin")
 .style.display="block";
 
 window.scrollTo(0,0);
@@ -1575,11 +1756,9 @@ window.scrollTo(0,0);
 }
 
 
-/*
-================================================
-CURSOS
-================================================
-*/
+/* =========================
+   CURSOS
+========================= */
 
 function abrirCurso(titulo,descricao){
 
@@ -1603,45 +1782,18 @@ document.getElementById("modalCurso")
 }
 
 
-window.onclick=function(event){
+/* =========================
+   INSCRIÇÃO
+========================= */
 
-const modal=
-document.getElementById("modalCurso");
-
-if(event.target===modal){
-
-fecharCurso();
-
-}
-
-};
-
-
-/*
-================================================
-LOGIN
-================================================
-*/
-
-function mostrarLogin(event){
+document.getElementById(
+"formInscricao"
+).addEventListener(
+"submit",
+async function(event){
 
 event.preventDefault();
 
-alert(
-"O sistema de login será ativado na próxima etapa."
-);
-
-}
-
-
-/*
-================================================
-FORMULÁRIO
-================================================
-*/
-
-const formulario =
-document.getElementById("formInscricao");
 
 const botao =
 document.getElementById("botao");
@@ -1650,136 +1802,143 @@ const resultado =
 document.getElementById("resultado");
 
 
-formulario.addEventListener(
-"submit",
-async function(event){
+const email =
+document.getElementById("email")
+.value.trim();
 
-event.preventDefault();
+const password =
+document.getElementById("password")
+.value;
+
+const passwordConfirm =
+document.getElementById("passwordConfirm")
+.value;
+
+
+if(password !== passwordConfirm){
+
+resultado.textContent=
+"As palavras-passe não coincidem.";
+
+resultado.className="error";
+
+return;
+
+}
 
 
 botao.disabled=true;
 
 botao.textContent=
-"Enviando inscrição...";
-
-resultado.className="";
-resultado.style.display="none";
+"Criando conta...";
 
 
 /*
-DADOS
+CRIAR CONTA NO SUPABASE AUTH
 */
 
-const nome =
-document.getElementById("nome")
-.value.trim();
+const { data: authData, error: authError } =
+await supabaseClient.auth.signUp({
 
-const apelido =
-document.getElementById("apelido")
-.value.trim();
+email:email,
 
-const nome_pai =
-document.getElementById("nome_pai")
-.value.trim();
+password:password
 
-const nome_mae =
-document.getElementById("nome_mae")
-.value.trim();
-
-const numero_bi =
-document.getElementById("numero_bi")
-.value.trim();
-
-const email =
-document.getElementById("email")
-.value.trim();
-
-const telefone =
-document.getElementById("telefone")
-.value.trim();
-
-const naturalidade =
-document.getElementById("naturalidade")
-.value.trim();
-
-const data_nascimento =
-document.getElementById("data_nascimento")
-.value;
-
-const provincia_nascimento =
-document.getElementById(
-"provincia_nascimento"
-).value;
-
-const escola =
-document.getElementById("escola")
-.value;
-
-const curso =
-document.getElementById("curso")
-.value;
-
-const mensagem =
-document.getElementById("mensagem")
-.value.trim();
+});
 
 
-/*
-ENVIAR AO SUPABASE
-*/
-
-const { error } =
-await supabaseClient
-.from("inscricoes")
-.insert([{
-
-nome: nome,
-
-apelido: apelido,
-
-nome_pai: nome_pai,
-
-nome_mae: nome_mae,
-
-numero_bi: numero_bi,
-
-email: email,
-
-telefone: telefone,
-
-naturalidade: naturalidade,
-
-data_nascimento: data_nascimento,
-
-provincia_nascimento:
-provincia_nascimento,
-
-escola: escola,
-
-curso: curso,
-
-mensagem: mensagem
-
-}]);
-
-
-/*
-ERRO
-*/
-
-if(error){
-
-console.error(error);
+if(authError){
 
 resultado.textContent=
-"Não foi possível enviar a inscrição. Verifique a configuração do Supabase.";
+authError.message;
 
 resultado.className="error";
 
 botao.disabled=false;
 
 botao.textContent=
-"Enviar inscrição";
+"Criar conta e enviar inscrição";
+
+return;
+
+}
+
+
+/*
+DADOS DO ALUNO
+*/
+
+const dados={
+
+id_usuario:
+authData.user
+? authData.user.id
+: null,
+
+nome:
+document.getElementById("nome").value.trim(),
+
+apelido:
+document.getElementById("apelido").value.trim(),
+
+nome_pai:
+document.getElementById("nome_pai").value.trim(),
+
+nome_mae:
+document.getElementById("nome_mae").value.trim(),
+
+numero_bi:
+document.getElementById("numero_bi").value.trim(),
+
+email:email,
+
+telefone:
+document.getElementById("telefone").value.trim(),
+
+naturalidade:
+document.getElementById("naturalidade").value.trim(),
+
+data_nascimento:
+document.getElementById("data_nascimento").value,
+
+provincia_nascimento:
+document.getElementById("provincia_nascimento").value,
+
+escola:
+document.getElementById("escola").value,
+
+curso:
+document.getElementById("curso").value,
+
+mensagem:
+document.getElementById("mensagem").value.trim()
+
+};
+
+
+/*
+GUARDAR INSCRIÇÃO
+*/
+
+const { error: insertError } =
+await supabaseClient
+.from("inscricoes")
+.insert([dados]);
+
+
+if(insertError){
+
+console.error(insertError);
+
+resultado.textContent=
+"A conta foi criada, mas ocorreu um erro ao guardar os dados da inscrição.";
+
+resultado.className="error";
+
+botao.disabled=false;
+
+botao.textContent=
+"Criar conta e enviar inscrição";
 
 return;
 
@@ -1791,16 +1950,103 @@ SUCESSO
 */
 
 resultado.textContent=
-"Inscrição enviada com sucesso!";
+"Inscrição criada com sucesso! Verifique o seu e-mail caso a confirmação esteja ativada.";
 
 resultado.className="success";
 
-formulario.reset();
+document.getElementById(
+"formInscricao"
+).reset();
 
 botao.disabled=false;
 
 botao.textContent=
-"Enviar inscrição";
+"Criar conta e enviar inscrição";
+
+});
+
+
+/* =========================
+   LOGIN
+========================= */
+
+document.getElementById(
+"formLogin"
+).addEventListener(
+"submit",
+async function(event){
+
+event.preventDefault();
+
+
+const email =
+document.getElementById(
+"loginEmail"
+).value.trim();
+
+const password =
+document.getElementById(
+"loginPassword"
+).value;
+
+const resultado =
+document.getElementById(
+"resultadoLogin"
+);
+
+
+const { data,error } =
+await supabaseClient.auth.signInWithPassword({
+
+email:email,
+
+password:password
+
+});
+
+
+if(error){
+
+resultado.textContent=
+"E-mail ou palavra-passe incorretos.";
+
+resultado.className="error";
+
+return;
+
+}
+
+
+resultado.textContent=
+"Login realizado com sucesso.";
+
+resultado.className="success";
+
+
+/*
+A ÁREA DO ALUNO SERÁ ADICIONADA
+NA PRÓXIMA ETAPA.
+*/
+
+});
+
+
+/* =========================
+   FECHAR MODAL AO CLICAR FORA
+========================= */
+
+window.addEventListener(
+"click",
+function(event){
+
+const modal =
+document.getElementById("modalCurso");
+
+if(event.target===modal){
+
+fecharCurso();
+
+}
 
 });
 
