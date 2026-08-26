@@ -1,25 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>Caixote Cursos Online</title>
 
 <style>
-:root{
-    --azul:#061f3d;
-    --azul2:#0b315d;
-    --azul3:#124577;
-    --azul4:#173f69;
-    --amarelo:#f5b900;
-    --amarelo2:#ffd34d;
-    --branco:#ffffff;
-    --cinza:#d8e2ed;
-    --cinza2:#aebdcd;
-    --erro:#ff6b6b;
-    --sucesso:#48d597;
-}
+
+/* =====================================================
+   CONFIGURAÇÃO GERAL
+===================================================== */
 
 *{
     margin:0;
@@ -33,2060 +27,2423 @@ html{
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:var(--azul);
-    color:white;
-    line-height:1.6;
+    background:#061d38;
+    color:#ffffff;
 }
 
-button,input,select,textarea{
-    font-family:inherit;
-}
 
-.container{
-    width:92%;
-    max-width:1150px;
-    margin:auto;
-}
-
-/* ================= HEADER ================= */
+/* =====================================================
+   CABEÇALHO
+===================================================== */
 
 header{
-    background:var(--azul);
-    border-bottom:1px solid rgba(255,255,255,.12);
+    background:linear-gradient(
+        135deg,
+        #03152b,
+        #083967
+    );
+
+    border-bottom:2px solid #f5c542;
+
     position:sticky;
     top:0;
+
     z-index:1000;
 }
 
-.navbar{
-    min-height:72px;
+.topo{
+    text-align:center;
+    padding:20px 15px 10px;
+}
+
+.topo h1{
+    font-size:28px;
+    color:#ffffff;
+}
+
+.topo h2{
+    margin-top:5px;
+    color:#f5c542;
+    font-size:19px;
+    letter-spacing:2px;
+}
+
+.nav{
+    max-width:1100px;
+    margin:auto;
+
     display:flex;
+    justify-content:center;
     align-items:center;
-    justify-content:space-between;
-}
 
-.logo{
-    text-decoration:none;
-    color:white;
-    font-size:21px;
-    font-weight:800;
-}
-
-.logo span{
-    color:var(--amarelo);
+    padding:10px;
 }
 
 .nav-links{
     display:flex;
     align-items:center;
-    gap:25px;
+    justify-content:center;
+    gap:5px;
 }
 
-.nav-links a{
+.nav a{
+    color:#ffffff;
     text-decoration:none;
-    color:#e6edf5;
-    font-size:14px;
-    font-weight:600;
+
+    padding:10px 17px;
+
+    font-weight:bold;
+
+    border-radius:6px;
+
+    transition:.3s;
 }
 
-.nav-links a:hover{
-    color:var(--amarelo);
-}
-
-.login-btn{
-    background:var(--amarelo);
-    color:var(--azul)!important;
-    padding:10px 18px;
-    border-radius:7px;
+.nav a:hover{
+    background:#f5c542;
+    color:#06264a;
 }
 
 .menu{
     display:none;
-    font-size:28px;
+    font-size:30px;
     cursor:pointer;
-    color:white;
-    user-select:none;
 }
 
-/* ================= HERO ================= */
+
+/* =====================================================
+   SEÇÕES
+===================================================== */
+
+section{
+    padding:70px 0;
+}
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+}
+
+.titulo{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.titulo h2{
+    font-size:34px;
+}
+
+.titulo p{
+    margin-top:8px;
+    color:#cbd8e5;
+}
+
+
+/* =====================================================
+   INÍCIO
+===================================================== */
 
 .hero{
-    background:var(--azul);
-    padding:90px 0 100px;
+    min-height:520px;
+
+    display:flex;
+    align-items:center;
+
+    background:
+    radial-gradient(
+        circle at top right,
+        #145a91,
+        transparent 40%
+    ),
+
+    linear-gradient(
+        135deg,
+        #04182e,
+        #0b4475
+    );
 }
 
 .hero-content{
-    display:grid;
-    grid-template-columns:1.15fr .85fr;
-    gap:65px;
-    align-items:center;
+    width:100%;
+    text-align:center;
 }
 
-.hero h1{
-    font-size:52px;
-    line-height:1.12;
-    margin-bottom:22px;
+.hero h3{
+    font-size:42px;
+    margin-bottom:15px;
 }
 
-.hero h1 span{
-    color:var(--amarelo);
+.hero h3 span{
+    color:#f5c542;
 }
 
 .hero p{
-    color:var(--cinza);
+    max-width:720px;
+    margin:auto;
+
+    color:#dce8f3;
+
     font-size:18px;
-    max-width:650px;
-    margin-bottom:30px;
+    line-height:1.6;
 }
 
-.buttons{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    border:none;
-    padding:13px 22px;
-    border-radius:7px;
-    font-size:15px;
-    font-weight:bold;
-    cursor:pointer;
-    text-decoration:none;
+.botao{
     display:inline-block;
-}
 
-.btn-yellow{
-    background:var(--amarelo);
-    color:var(--azul);
-}
+    margin-top:25px;
 
-.btn-yellow:hover{
-    background:var(--amarelo2);
-}
+    padding:13px 24px;
 
-.btn-outline{
-    background:transparent;
-    border:1px solid var(--amarelo);
-    color:var(--amarelo);
-}
+    border-radius:7px;
 
-.btn-outline:hover{
-    background:var(--amarelo);
-    color:var(--azul);
-}
+    border:0;
 
-.hero-card{
-    background:linear-gradient(145deg,var(--azul2),var(--azul3));
-    border:1px solid rgba(255,255,255,.12);
-    border-top:4px solid var(--amarelo);
-    border-radius:14px;
-    padding:32px;
-    box-shadow:0 15px 40px rgba(0,0,0,.3);
-}
+    text-decoration:none;
 
-.hero-icon{
-    width:48px;
-    height:48px;
-    border-radius:8px;
-    background:var(--amarelo);
-    color:var(--azul);
-    display:flex;
-    align-items:center;
-    justify-content:center;
     font-weight:bold;
-    margin-bottom:20px;
+
+    cursor:pointer;
 }
 
-.hero-card h3{
-    margin-bottom:10px;
+.dourado{
+    background:#f5c542;
+    color:#06264a;
 }
 
-.hero-card p{
-    font-size:14px;
-    margin-bottom:20px;
+.azul{
+    background:#06264a;
+    color:#ffffff;
 }
 
-.info-line{
-    display:flex;
-    justify-content:space-between;
-    padding:11px 0;
-    border-top:1px solid rgba(255,255,255,.10);
-    font-size:14px;
+
+/* =====================================================
+   CARTÕES
+===================================================== */
+
+.grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:22px;
 }
 
-.info-line strong{
-    color:var(--amarelo);
-}
 
-/* ================= SEÇÕES ================= */
-
-section{
-    padding:75px 0;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:45px;
-}
-
-.section-title h2{
-    font-size:34px;
-    margin-bottom:10px;
-}
-
-.section-title p{
-    color:var(--cinza);
-}
-
-/* ================= CURSOS ================= */
+/* =====================================================
+   CURSOS
+===================================================== */
 
 #cursos{
-    background:linear-gradient(135deg,#09294e,#0d3968);
+    background:#ffffff;
+    color:#142538;
 }
 
-.courses{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+#cursos .titulo p{
+    color:#647386;
 }
 
-.course-card{
-    background:linear-gradient(145deg,var(--azul3),#185284);
-    border:1px solid rgba(255,255,255,.10);
+.card{
+    background:#f7f9fc;
+
+    border:1px solid #dce4ec;
+
     border-radius:12px;
+
     padding:25px;
-    transition:.25s;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
 }
 
-.course-card:hover{
-    transform:translateY(-5px);
-    border-color:var(--amarelo);
-    box-shadow:0 12px 30px rgba(0,0,0,.25);
+.card:hover{
+    transform:translateY(-4px);
+
+    border-color:#f5c542;
 }
 
-.course-icon{
-    width:42px;
-    height:42px;
-    background:var(--amarelo);
-    color:var(--azul);
-    border-radius:7px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.card h3{
+    color:#06264a;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#637285;
+
     font-size:14px;
-    font-weight:bold;
-    margin-bottom:17px;
-}
 
-.course-card h3{
-    margin-bottom:8px;
-}
+    line-height:1.5;
 
-.course-card p{
-    color:var(--cinza);
-    font-size:14px;
-    margin-bottom:16px;
-}
-
-.course-link{
-    border:none;
-    background:none;
-    color:var(--amarelo);
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* ================= PROFESSOR ================= */
-
-#professor{
-    background:var(--azul);
-}
-
-.teacher{
-    background:linear-gradient(145deg,var(--azul2),var(--azul4));
-    border:1px solid rgba(255,255,255,.10);
-    border-radius:14px;
-    padding:40px;
-    display:grid;
-    grid-template-columns:220px 1fr;
-    align-items:center;
-    gap:45px;
-}
-
-.teacher-photo{
-    width:170px;
-    height:170px;
-    border-radius:50%;
-    background:var(--amarelo);
-    color:var(--azul);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:48px;
-    font-weight:bold;
-    border:5px solid white;
-    margin:auto;
-}
-
-.teacher h2{
-    margin-bottom:3px;
-}
-
-.teacher h4{
-    color:var(--amarelo);
     margin-bottom:15px;
 }
 
-.teacher p{
-    color:var(--cinza);
+.btn-info{
+    background:#06264a;
+
+    color:#ffffff;
+
+    border:0;
+
+    padding:10px 15px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    font-weight:bold;
 }
 
-/* ================= CONTACTO ================= */
+
+/* =====================================================
+   E-BOOKS
+===================================================== */
+
+#ebooks{
+
+    background:
+
+    radial-gradient(
+        circle at bottom left,
+        #145a91,
+        transparent 35%
+    ),
+
+    linear-gradient(
+        135deg,
+        #061d38,
+        #0b4475
+    );
+}
+
+.ebook-card{
+    background:#ffffff;
+
+    color:#172436;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.25);
+}
+
+.capa{
+
+    height:170px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #f5c542,
+        #ffe99a
+    );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:20px;
+}
+
+.capa h3{
+    color:#06264a;
+
+    font-size:22px;
+}
+
+.ebook-info{
+    padding:22px;
+}
+
+.ebook-info p{
+    color:#687789;
+
+    font-size:14px;
+
+    line-height:1.5;
+
+    margin:
+    8px 0 18px;
+}
+
+.ebook-btn{
+
+    display:inline-block;
+
+    padding:10px 13px;
+
+    border-radius:6px;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    margin-right:5px;
+
+    margin-bottom:5px;
+}
+
+.ler{
+    background:#06264a;
+    color:#ffffff;
+}
+
+.baixar{
+    border:1px solid #06264a;
+    color:#06264a;
+}
+
+
+/* =====================================================
+   CONTACTO
+===================================================== */
 
 #contacto{
-    background:linear-gradient(135deg,var(--amarelo),#e7a900);
-    color:var(--azul);
-    text-align:center;
-}
 
-#contacto h2{
-    font-size:32px;
+    background:#f5c542;
+
+    color:#06264a;
+
+    text-align:center;
 }
 
 #contacto p{
-    margin:8px auto 22px;
-    max-width:600px;
-}
-
-.whatsapp-buttons{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    flex-wrap:wrap;
+    margin-top:8px;
 }
 
 .whatsapp{
-    background:var(--azul);
-    color:white;
-    padding:11px 19px;
+
+    display:inline-block;
+
+    background:#06264a;
+
+    color:#ffffff;
+
+    padding:12px 18px;
+
+    margin:
+    15px 5px 0;
+
     border-radius:7px;
+
     text-decoration:none;
+
     font-weight:bold;
 }
 
-/* ================= INSCRIÇÃO ================= */
 
-#areaInscricao{
+/* =====================================================
+   INSCRIÇÃO
+===================================================== */
+
+#inscricao{
+
     display:none;
-    background:var(--azul);
+
     min-height:100vh;
+
+    background:
+    linear-gradient(
+        135deg,
+        #04182e,
+        #0b4475
+    );
 }
 
-.form-header{
-    text-align:center;
-    margin-bottom:30px;
-}
+.formulario{
 
-.form-header h2{
-    font-size:34px;
-}
-
-.form-header p{
-    color:var(--cinza);
-}
-
-.form-box{
     max-width:760px;
+
     margin:auto;
-    background:white;
+
+    background:#ffffff;
+
     color:#172436;
-    border-radius:14px;
-    padding:32px;
-    border-top:5px solid var(--amarelo);
-    box-shadow:0 15px 40px rgba(0,0,0,.3);
+
+    padding:30px;
+
+    border-radius:12px;
+
+    border-top:
+    5px solid #f5c542;
 }
 
-.form-title{
-    color:var(--azul);
-    border-bottom:2px solid #e7ebef;
-    padding-bottom:8px;
-    margin:22px 0 18px;
-    font-size:18px;
-}
+.formulario h2{
 
-.form-title:first-child{
-    margin-top:0;
-}
-
-.form-group{
-    margin-bottom:16px;
-}
-
-.form-group label{
-    display:block;
-    font-size:14px;
-    font-weight:bold;
-    margin-bottom:6px;
-}
-
-.required{
-    color:#d40000;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea{
-    width:100%;
-    padding:12px;
-    border:1px solid #ccd5df;
-    border-radius:7px;
-    outline:none;
-    font-size:15px;
-    background:white;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
-    border-color:var(--azul2);
-    box-shadow:0 0 0 3px rgba(8,43,82,.10);
-}
-
-.form-group textarea{
-    min-height:90px;
-    resize:vertical;
-}
-
-.password-info{
-    color:#667386;
-    font-size:12px;
-    margin-top:5px;
-}
-
-.submit-btn{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:7px;
-    background:var(--amarelo);
-    color:var(--azul);
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.submit-btn:hover{
-    background:var(--amarelo2);
-}
-
-.submit-btn:disabled{
-    opacity:.6;
-    cursor:not-allowed;
-}
-
-.back-btn{
-    display:block;
-    margin:0 auto 25px;
-    padding:10px 18px;
-    border:1px solid var(--amarelo);
-    background:transparent;
-    color:var(--amarelo);
-    border-radius:7px;
-    cursor:pointer;
-}
-
-#resultado{
-    margin-top:15px;
-    padding:12px;
-    border-radius:7px;
     text-align:center;
-    display:none;
-}
 
-.success{
-    display:block!important;
-    background:#d9f8e9;
-    color:#12663e;
-}
+    color:#06264a;
 
-.error{
-    display:block!important;
-    background:#ffe0e0;
-    color:#a51d1d;
-}
-
-/* ================= LOGIN ================= */
-
-#areaLogin{
-    display:none;
-    background:var(--azul);
-    min-height:100vh;
-    padding:75px 0;
-}
-
-.login-box{
-    max-width:450px;
-    margin:auto;
-    background:white;
-    color:#172436;
-    border-radius:14px;
-    padding:32px;
-    border-top:5px solid var(--amarelo);
-}
-
-.login-box h2{
-    color:var(--azul);
-    text-align:center;
-    margin-bottom:7px;
-}
-
-.login-box>p{
-    text-align:center;
-    color:#667386;
     margin-bottom:25px;
 }
 
-.login-box input{
-    width:100%;
+.formulario h3{
+
+    background:#06264a;
+
+    color:#ffffff;
+
     padding:12px;
-    margin-bottom:15px;
-    border:1px solid #ccd5df;
-    border-radius:7px;
-    font-size:15px;
+
+    border-radius:6px;
+
+    margin:
+    25px 0 15px;
 }
 
-.login-box button{
-    width:100%;
-    padding:13px;
-    border:none;
-    border-radius:7px;
-    background:var(--amarelo);
-    color:var(--azul);
+.campo{
+    margin-bottom:15px;
+}
+
+.campo label{
+
+    display:block;
+
     font-weight:bold;
+
+    margin-bottom:5px;
+}
+
+.campo input,
+.campo select,
+.campo textarea{
+
+    width:100%;
+
+    padding:12px;
+
+    border:
+    1px solid #ccd6e0;
+
+    border-radius:6px;
+
+    font-size:15px;
+
+    background:#ffffff;
+}
+
+.campo textarea{
+
+    min-height:100px;
+
+    resize:vertical;
+}
+
+.campo small{
+
+    display:block;
+
+    margin-top:5px;
+
+    color:#687789;
+}
+
+.enviar{
+
+    width:100%;
+
+    background:#f5c542;
+
+    color:#06264a;
+
+    padding:14px;
+
+    border:0;
+
+    border-radius:7px;
+
+    font-weight:bold;
+
+    font-size:16px;
+
     cursor:pointer;
 }
 
-.login-back{
-    display:block;
-    margin:18px auto 0;
-    background:none!important;
-    color:var(--azul)!important;
-}
 
-/* ================= MODAL ================= */
+/* =====================================================
+   MODAL
+===================================================== */
 
 .modal{
+
     display:none;
+
     position:fixed;
+
     inset:0;
-    background:rgba(0,0,0,.70);
-    z-index:3000;
+
+    background:
+    rgba(0,0,0,.7);
+
+    z-index:5000;
+
     padding:20px;
 }
 
 .modal-box{
+
     max-width:550px;
-    margin:10% auto;
-    background:white;
+
+    background:#ffffff;
+
     color:#172436;
+
+    margin:80px auto;
+
     padding:30px;
+
     border-radius:12px;
-    border-top:5px solid var(--amarelo);
+
     position:relative;
 }
 
 .modal-box h2{
-    color:var(--azul);
-    margin-bottom:10px;
+
+    color:#06264a;
+
+    margin-bottom:15px;
 }
 
 .modal-box p{
-    color:#667386;
-    margin-bottom:20px;
+
+    line-height:1.6;
 }
 
-.close{
+.fechar{
+
     position:absolute;
-    right:17px;
+
+    right:15px;
+
     top:8px;
-    font-size:28px;
+
+    font-size:30px;
+
     cursor:pointer;
 }
 
-/* ================= FOOTER ================= */
+
+/* =====================================================
+   RODAPÉ
+===================================================== */
 
 footer{
-    background:#031327;
+
+    background:#021225;
+
     text-align:center;
-    padding:28px 15px;
+
+    padding:25px;
 }
 
 footer strong{
-    color:var(--amarelo);
+
+    color:#f5c542;
 }
 
 footer p{
-    color:#91a1b3;
+
+    color:#9aabba;
+
     font-size:13px;
+
     margin-top:5px;
 }
 
-/* ================= MENU MOBILE ================= */
 
-@media(max-width:850px){
+/* =====================================================
+   MOBILE
+===================================================== */
 
-    .nav-links{
-        display:none;
-        position:absolute;
-        top:72px;
-        left:0;
-        width:100%;
-        background:var(--azul2);
-        padding:20px;
-        flex-direction:column;
-        align-items:stretch;
-        gap:8px;
-        border-bottom:2px solid var(--amarelo);
-        box-shadow:0 10px 25px rgba(0,0,0,.3);
-    }
-
-    .nav-links.active{
-        display:flex;
-    }
-
-    .nav-links a{
-        display:block;
-        padding:13px 15px;
-        border-radius:6px;
-    }
-
-    .nav-links a:hover{
-        background:var(--azul3);
-    }
-
-    .login-btn{
-        text-align:center;
-    }
+@media(max-width:800px){
 
     .menu{
         display:block;
     }
 
-    .hero-content{
-        grid-template-columns:1fr;
-    }
-
-    .hero h1{
-        font-size:42px;
-    }
-
-    .courses{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .teacher{
-        grid-template-columns:1fr;
-        text-align:center;
-    }
-}
-
-@media(max-width:550px){
-
-    .navbar{
-        min-height:65px;
+    .nav{
+        justify-content:flex-end;
+        position:relative;
     }
 
     .nav-links{
-        top:65px;
+
+        display:none;
+
+        position:absolute;
+
+        top:50px;
+
+        left:0;
+
+        width:100%;
+
+        background:#031b34;
+
+        flex-direction:column;
+
+        padding:10px;
     }
 
-    .logo{
-        font-size:18px;
+    .nav-links.ativo{
+        display:flex;
     }
 
-    .hero{
-        padding:65px 0;
+    .nav-links a{
+
+        width:100%;
+
+        text-align:center;
     }
 
-    .hero h1{
-        font-size:35px;
+    .grid{
+
+        grid-template-columns:
+        1fr 1fr;
     }
 
-    .hero p{
+    .hero h3{
+
+        font-size:34px;
+    }
+}
+
+
+@media(max-width:550px){
+
+    .topo h1{
+        font-size:22px;
+    }
+
+    .topo h2{
         font-size:16px;
     }
 
-    .courses{
-        grid-template-columns:1fr;
+    .grid{
+
+        grid-template-columns:
+        1fr;
     }
 
-    .form-box{
-        padding:22px 18px;
-    }
+    .formulario{
 
-    .teacher{
-        padding:25px 18px;
-    }
-
-    section{
-        padding:55px 0;
+        padding:20px;
     }
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- =====================================================
+     CABEÇALHO
+===================================================== -->
+
 <header>
-<div class="container navbar">
 
-<a href="#" class="logo" onclick="mostrarInicio()">
-Caixote <span>Cursos Online</span>
-</a>
+<div class="topo">
 
-<nav class="nav-links" id="navLinks">
+<h1>
+Caixote Cursos Online
+</h1>
 
-<a href="#" onclick="mostrarInicio();fecharMenu();">
+<h2>
+BEM-VINDO
+</h2>
+
+</div>
+
+
+<div class="nav">
+
+<div
+class="menu"
+onclick="abrirMenu()">
+
+☰
+
+</div>
+
+
+<nav
+class="nav-links"
+id="navLinks">
+
+
+<a
+href="#inicio"
+onclick="fecharMenu()">
+
 Início
+
 </a>
 
-<a href="#cursos" onclick="fecharMenu();">
+
+<a
+href="#cursos"
+onclick="fecharMenu()">
+
 Cursos
+
 </a>
 
-<a href="#professor" onclick="fecharMenu();">
-Professor
+
+<a
+href="#ebooks"
+onclick="fecharMenu()">
+
+📚 E-books
+
 </a>
 
-<a href="#contacto" onclick="fecharMenu();">
+
+<a
+href="#"
+onclick="
+abrirInscricao();
+fecharMenu();
+return false;
+">
+
+Inscrições
+
+</a>
+
+
+<a
+href="#contacto"
+onclick="fecharMenu()">
+
 Contacto
+
 </a>
 
-<a href="#" class="login-btn" onclick="abrirLogin(event);fecharMenu();">
-Iniciar sessão
-</a>
 
 </nav>
 
-<div class="menu" id="menuBtn" onclick="abrirMenu()">
-☰
 </div>
 
-</div>
 </header>
 
 
-<main id="paginaInicial">
 
-<section class="hero">
+<!-- =====================================================
+     INÍCIO
+===================================================== -->
 
-<div class="container hero-content">
-
-<div>
-
-<h1>
-Aprenda hoje.
-<span>Construa o seu futuro.</span>
-</h1>
-
-<p>
-Bem-vindo ao Caixote Cursos Online.
-Aprenda novas competências através
-de uma plataforma simples e acessível.
-</p>
-
-<div class="buttons">
-
-<button class="btn btn-yellow" onclick="abrirInscricao()">
-Entrar na plataforma de inscrição
-</button>
-
-<a href="#cursos" class="btn btn-outline">
-Ver cursos
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-card">
-
-<div class="hero-icon">C</div>
-
-<h3>Caixote Cursos Online</h3>
-
-<p>
-Formação, conhecimento e desenvolvimento
-de competências para o futuro.
-</p>
-
-<div class="info-line">
-<span>Professor</span>
-<strong>Caixote</strong>
-</div>
-
-<div class="info-line">
-<span>Modalidade</span>
-<strong>Online</strong>
-</div>
-
-<div class="info-line">
-<span>Inscrição</span>
-<strong>Online</strong>
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<section id="cursos">
+<section
+class="hero"
+id="inicio">
 
 <div class="container">
 
-<div class="section-title">
-<h2>Cursos</h2>
-<p>Conheça algumas das formações disponíveis.</p>
-</div>
-
-<div class="courses">
-
-<div class="course-card">
-<div class="course-icon">IF</div>
-<h3>Informática Básica</h3>
-<p>Aprenda os fundamentos da informática e das principais ferramentas digitais.</p>
-<button class="course-link"
-onclick="abrirCurso('Informática Básica','Aprenda os fundamentos da informática, utilização do computador, documentos e ferramentas digitais.')">
-Ver informações →
-</button>
-</div>
-
-<div class="course-card">
-<div class="course-icon">PG</div>
-<h3>Programação</h3>
-<p>Conheça os fundamentos da programação e desenvolva os seus primeiros projetos.</p>
-<button class="course-link"
-onclick="abrirCurso('Programação','Aprenda os fundamentos da programação e desenvolva os seus primeiros projetos.')">
-Ver informações →
-</button>
-</div>
-
-<div class="course-card">
-<div class="course-icon">WB</div>
-<h3>Desenvolvimento Web</h3>
-<p>Aprenda a criar páginas e projetos para a Internet.</p>
-<button class="course-link"
-onclick="abrirCurso('Desenvolvimento Web','Aprenda HTML, CSS e JavaScript para criar páginas web.')">
-Ver informações →
-</button>
-</div>
-
-<div class="course-card">
-<div class="course-icon">DG</div>
-<h3>Design Gráfico</h3>
-<p>Aprenda princípios fundamentais de design e comunicação visual.</p>
-<button class="course-link"
-onclick="abrirCurso('Design Gráfico','Conheça os princípios de composição e criação de conteúdos visuais.')">
-Ver informações →
-</button>
-</div>
-
-<div class="course-card">
-<div class="course-icon">MD</div>
-<h3>Marketing Digital</h3>
-<p>Aprenda conceitos fundamentais de marketing no ambiente digital.</p>
-<button class="course-link"
-onclick="abrirCurso('Marketing Digital','Conheça ferramentas e estratégias fundamentais de marketing digital.')">
-Ver informações →
-</button>
-</div>
-
-<div class="course-card">
-<div class="course-icon">+</div>
-<h3>Novas formações</h3>
-<p>Novos cursos serão adicionados à plataforma.</p>
-<button class="course-link"
-onclick="abrirCurso('Novas formações','Novas formações serão adicionadas futuramente.')">
-Ver informações →
-</button>
-</div>
-
-</div>
-</div>
-</section>
+<div class="hero-content">
 
 
-<section id="professor">
+<h3>
 
-<div class="container">
+Aprenda e desenvolva o seu
 
-<div class="section-title">
-<h2>Professor Caixote</h2>
-<p>Responsável pelo projeto Caixote Cursos Online.</p>
-</div>
+<span>
+conhecimento
+</span>
 
-<div class="teacher">
+</h3>
 
-<div class="teacher-photo">C</div>
-
-<div>
-
-<h2>Professor Caixote</h2>
-
-<h4>Fundador do Caixote Cursos Online</h4>
 
 <p>
-O Caixote Cursos Online foi criado para
-facilitar o acesso à aprendizagem e ajudar
-estudantes e interessados a desenvolver
-competências para a vida académica
-e profissional.
+
+Bem-vindo ao
+Caixote Cursos Online.
+
+Encontre cursos,
+livros e materiais educativos
+para melhorar os seus conhecimentos.
+
 </p>
-
-</div>
-
-</div>
-</div>
-</section>
-
-
-<section id="contacto">
-
-<div class="container">
-
-<h2>Fale connosco</h2>
-
-<p>
-Entre em contacto através de um dos nossos números de WhatsApp.
-</p>
-
-<div class="whatsapp-buttons">
-
-<a href="https://wa.me/258850313445"
-target="_blank"
-class="whatsapp">
-850 313 445
-</a>
-
-<a href="https://wa.me/258864576664"
-target="_blank"
-class="whatsapp">
-864 576 664
-</a>
-
-<a href="https://wa.me/258835316062"
-target="_blank"
-class="whatsapp">
-835 316 062
-</a>
-
-</div>
-</div>
-</section>
-
-</main>
-
-
-<!-- ================= INSCRIÇÃO ================= -->
-
-<section id="areaInscricao">
-
-<div class="container">
-
-<div class="form-header">
-
-<h2>Plataforma de Inscrição</h2>
-
-<p>
-Crie a sua conta e faça a sua inscrição.
-</p>
-
-</div>
-
-<button class="back-btn" onclick="mostrarInicio()">
-← Voltar
-</button>
-
-<div class="form-box">
-
-<form id="formInscricao">
-
-<h3 class="form-title">Dados pessoais</h3>
-
-<div class="form-group">
-<label>Nome completo <span class="required">*</span></label>
-<input type="text" id="nome" name="nome" required placeholder="Nome completo">
-</div>
-
-<div class="form-group">
-<label>Apelido <span class="required">*</span></label>
-<input type="text" id="apelido" name="apelido" required placeholder="Apelido">
-</div>
-
-<div class="form-group">
-<label>Nome do pai <span class="required">*</span></label>
-<input type="text" id="nome_pai" name="nome_pai" required placeholder="Nome completo do pai">
-</div>
-
-<div class="form-group">
-<label>Nome da mãe <span class="required">*</span></label>
-<input type="text" id="nome_mae" name="nome_mae" required placeholder="Nome completo da mãe">
-</div>
-
-<div class="form-group">
-<label>Número do BI <span class="required">*</span></label>
-<input type="text" id="numero_bi" name="numero_bi" required placeholder="Número do BI">
-</div>
-
-<div class="form-group">
-<label>E-mail <span class="required">*</span></label>
-<input type="email" id="email" name="email" required placeholder="exemplo@email.com">
-</div>
-
-<div class="form-group">
-<label>WhatsApp <span class="required">*</span></label>
-<input type="tel" id="telefone" name="telefone" required placeholder="Ex.: 850313445">
-</div>
-
-<div class="form-group">
-<label>Naturalidade <span class="required">*</span></label>
-<input type="text" id="naturalidade" name="naturalidade" required placeholder="Ex.: Nampula">
-</div>
-
-<div class="form-group">
-<label>Data de nascimento <span class="required">*</span></label>
-<input type="date" id="data_nascimento" name="data_nascimento" required>
-</div>
-
-<div class="form-group">
-<label>Província de nascimento <span class="required">*</span></label>
-
-<select id="provincia_nascimento" name="provincia_nascimento" required>
-
-<option value="">-- Escolha --</option>
-<option>Cabo Delgado</option>
-<option>Gaza</option>
-<option>Inhambane</option>
-<option>Manica</option>
-<option>Maputo Cidade</option>
-<option>Maputo Província</option>
-<option>Nampula</option>
-<option>Niassa</option>
-<option>Sofala</option>
-<option>Tete</option>
-<option>Zambézia</option>
-
-</select>
-</div>
-
-
-<h3 class="form-title">Dados académicos</h3>
-
-<div class="form-group">
-
-<label>Escola / Instituição <span class="required">*</span></label>
-
-<select id="escola" name="escola" required>
-
-<option value="">-- Escolha a escola --</option>
-
-<option>Escola Secundária de Nampula</option>
-<option>Escola Secundária de Muatala</option>
-<option>Escola Secundária de Napipine</option>
-<option>Escola Secundária de Namicopo</option>
-<option>Escola Secundária de Natikiri</option>
-<option>Escola Secundária de Marrere</option>
-<option>Escola Secundária de Rapale</option>
-<option>Escola Secundária de Monapo</option>
-<option>Escola Secundária de Angoche</option>
-<option>Escola Secundária da Ilha de Moçambique</option>
-<option>Universidade Rovuma</option>
-<option>Universidade Pedagógica</option>
-<option>Outra escola</option>
-
-</select>
-</div>
-
-<div class="form-group">
-
-<label>Curso <span class="required">*</span></label>
-
-<select id="curso" name="curso" required>
-
-<option value="">-- Escolha o curso --</option>
-
-<option>Informática Básica</option>
-<option>Programação</option>
-<option>Desenvolvimento Web</option>
-<option>Design Gráfico</option>
-<option>Marketing Digital</option>
-<option>Outro</option>
-
-</select>
-</div>
-
-
-<h3 class="form-title">Segurança da conta</h3>
-
-<div class="form-group">
-
-<label>Palavra-passe <span class="required">*</span></label>
-
-<input
-type="password"
-id="password"
-required
-minlength="6"
-placeholder="Crie uma palavra-passe">
-
-<div class="password-info">
-Mínimo de 6 caracteres.
-</div>
-
-</div>
-
-<div class="form-group">
-
-<label>Confirmar palavra-passe <span class="required">*</span></label>
-
-<input
-type="password"
-id="passwordConfirm"
-required
-minlength="6"
-placeholder="Digite novamente a palavra-passe">
-
-</div>
-
-<div class="form-group">
-
-<label>Mensagem</label>
-
-<textarea
-id="mensagem"
-name="mensagem"
-placeholder="Mensagem opcional"></textarea>
-
-</div>
 
 
 <button
-type="submit"
-class="submit-btn"
-id="botao">
+class="botao dourado"
+onclick="abrirInscricao()">
 
-Criar conta e enviar inscrição
+Fazer inscrição
 
 </button>
 
-<div id="resultado"></div>
 
-</form>
+<br>
+
+
+<a
+href="#ebooks"
+class="botao dourado">
+
+📚 Entrar na Biblioteca de E-books
+
+</a>
+
 
 </div>
+
 </div>
+
 </section>
 
 
-<!-- ================= LOGIN ================= -->
 
-<section id="areaLogin">
+<!-- =====================================================
+     CURSOS
+===================================================== -->
+
+<section
+id="cursos">
 
 <div class="container">
 
-<div class="login-box">
 
-<h2>Iniciar sessão</h2>
+<div class="titulo">
+
+<h2>
+Cursos
+</h2>
 
 <p>
-Entre na sua conta do Caixote Cursos Online.
+Escolha um curso para consultar as informações.
 </p>
 
-<form id="formLogin">
+</div>
+
+
+<div class="grid">
+
+
+<!-- CURSO 1 -->
+
+<div class="card">
+
+<h3>
+Programação
+</h3>
+
+<p>
+
+Aprenda lógica de programação,
+conceitos fundamentais e
+desenvolvimento de pequenos projetos.
+
+</p>
+
+<button
+class="btn-info"
+onclick="
+mostrarCurso(
+'Programação',
+'Aprenda lógica de programação, conceitos fundamentais e desenvolvimento de pequenos projetos. Modalidade: Online.'
+)
+">
+
+Ver informações
+
+</button>
+
+</div>
+
+
+
+<!-- CURSO 2 -->
+
+<div class="card">
+
+<h3>
+Informática Básica
+</h3>
+
+<p>
+
+Conheça os fundamentos
+da informática e das
+ferramentas digitais.
+
+</p>
+
+<button
+class="btn-info"
+onclick="
+mostrarCurso(
+'Informática Básica',
+'Aprenda conceitos fundamentais de computadores, documentos, Internet e ferramentas digitais. Modalidade: Online.'
+)
+">
+
+Ver informações
+
+</button>
+
+</div>
+
+
+
+<!-- CURSO 3 -->
+
+<div class="card">
+
+<h3>
+Desenvolvimento Web
+</h3>
+
+<p>
+
+Aprenda a criar páginas
+para a Internet.
+
+</p>
+
+<button
+class="btn-info"
+onclick="
+mostrarCurso(
+'Desenvolvimento Web',
+'Introdução ao HTML, CSS e JavaScript para criação de páginas web. Modalidade: Online.'
+)
+">
+
+Ver informações
+
+</button>
+
+</div>
+
+
+
+<!-- CURSO 4 -->
+
+<div class="card">
+
+<h3>
+Design Gráfico
+</h3>
+
+<p>
+
+Aprenda princípios básicos
+de design e comunicação visual.
+
+</p>
+
+<button
+class="btn-info"
+onclick="
+mostrarCurso(
+'Design Gráfico',
+'Aprenda fundamentos de composição, comunicação visual e criação de conteúdos gráficos. Modalidade: Online.'
+)
+">
+
+Ver informações
+
+</button>
+
+</div>
+
+
+
+<!-- CURSO 5 -->
+
+<div class="card">
+
+<h3>
+Marketing Digital
+</h3>
+
+<p>
+
+Conheça conceitos fundamentais
+do marketing digital.
+
+</p>
+
+<button
+class="btn-info"
+onclick="
+mostrarCurso(
+'Marketing Digital',
+'Aprenda conceitos fundamentais de marketing e comunicação no ambiente digital. Modalidade: Online.'
+)
+">
+
+Ver informações
+
+</button>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     E-BOOKS
+===================================================== -->
+
+<section
+id="ebooks">
+
+<div class="container">
+
+
+<div class="titulo">
+
+<h2>
+📚 Biblioteca de E-books
+</h2>
+
+<p>
+Escolha um livro para ler ou baixar.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<!-- EBOOK 1 -->
+
+<div class="ebook-card">
+
+<div class="capa">
+
+<h3>
+
+📖
+<br>
+
+Introdução à Programação
+
+</h3>
+
+</div>
+
+
+<div class="ebook-info">
+
+<h3>
+Introdução à Programação
+</h3>
+
+<p>
+
+Material introdutório
+para aprender os primeiros
+conceitos de programação.
+
+</p>
+
+
+<a
+href="ebooks/programacao.pdf"
+target="_blank"
+class="ebook-btn ler">
+
+Ler livro
+
+</a>
+
+
+<a
+href="ebooks/programacao.pdf"
+download
+class="ebook-btn baixar">
+
+Baixar PDF
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
+<!-- EBOOK 2 -->
+
+<div class="ebook-card">
+
+<div class="capa">
+
+<h3>
+
+📘
+<br>
+
+Informática Básica
+
+</h3>
+
+</div>
+
+
+<div class="ebook-info">
+
+<h3>
+Informática Básica
+</h3>
+
+<p>
+
+Material para quem está
+começando a aprender informática.
+
+</p>
+
+
+<a
+href="ebooks/informatica.pdf"
+target="_blank"
+class="ebook-btn ler">
+
+Ler livro
+
+</a>
+
+
+<a
+href="ebooks/informatica.pdf"
+download
+class="ebook-btn baixar">
+
+Baixar PDF
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
+<!-- EBOOK 3 -->
+
+<div class="ebook-card">
+
+<div class="capa">
+
+<h3>
+
+📕
+<br>
+
+Desenvolvimento Web
+
+</h3>
+
+</div>
+
+
+<div class="ebook-info">
+
+<h3>
+Desenvolvimento Web
+</h3>
+
+<p>
+
+Introdução ao desenvolvimento
+de páginas web.
+
+</p>
+
+
+<a
+href="ebooks/web.pdf"
+target="_blank"
+class="ebook-btn ler">
+
+Ler livro
+
+</a>
+
+
+<a
+href="ebooks/web.pdf"
+download
+class="ebook-btn baixar">
+
+Baixar PDF
+
+</a>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACTO
+===================================================== -->
+
+<section
+id="contacto">
+
+<div class="container">
+
+
+<h2>
+Contacto
+</h2>
+
+
+<p>
+
+Fale connosco através do WhatsApp.
+
+</p>
+
+
+<a
+href="https://wa.me/258850313445"
+target="_blank"
+class="whatsapp">
+
+850 313 445
+
+</a>
+
+
+<a
+href="https://wa.me/258864576664"
+target="_blank"
+class="whatsapp">
+
+864 576 664
+
+</a>
+
+
+<a
+href="https://wa.me/258835316062"
+target="_blank"
+class="whatsapp">
+
+835 316 062
+
+</a>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INSCRIÇÃO
+===================================================== -->
+
+<section
+id="inscricao">
+
+<div class="container">
+
+
+<div class="formulario">
+
+
+<h2>
+Formulário de Inscrição
+</h2>
+
+
+<!-- =================================================
+     FORMSUBMIT
+================================================= -->
+
+<form
+action="https://formsubmit.co/delciocaixote1@gmail.com"
+method="POST">
+
+
+<input
+type="hidden"
+name="_subject"
+value="Nova inscrição - Caixote Cursos Online">
+
+
+<input
+type="hidden"
+name="_template"
+value="table">
+
+
+<input
+type="hidden"
+name="_captcha"
+value="false">
+
+
+
+<!-- ================================================
+     DADOS PESSOAIS
+================================================ -->
+
+<h3>
+Dados pessoais
+</h3>
+
+
+<div class="campo">
+
+<label>
+Nome completo
+</label>
+
+<input
+type="text"
+name="Nome completo"
+placeholder="Digite o nome completo"
+required>
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Apelido
+</label>
+
+<input
+type="text"
+name="Apelido"
+placeholder="Digite o apelido"
+required>
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Nome do pai
+</label>
+
+<input
+type="text"
+name="Nome do pai"
+placeholder="Digite o nome do pai"
+required>
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Nome da mãe
+</label>
+
+<input
+type="text"
+name="Nome da mãe"
+placeholder="Digite o nome da mãe"
+required>
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Número do BI
+</label>
+
+<input
+type="text"
+name="Número do BI"
+placeholder="Digite o número do BI"
+required>
+
+</div>
+
+
+<div class="campo">
+
+<label>
+E-mail
+</label>
 
 <input
 type="email"
-id="loginEmail"
-required
-placeholder="Seu e-mail">
+name="E-mail"
+placeholder="Digite o seu e-mail"
+required>
+
+</div>
+
+
+<div class="campo">
+
+<label>
+WhatsApp
+</label>
 
 <input
-type="password"
-id="loginPassword"
-required
-placeholder="Sua palavra-passe">
+type="tel"
+name="WhatsApp"
+placeholder="Ex.: 850 000 000"
+required>
 
-<button type="submit">
-Entrar
+</div>
+
+
+<div class="campo">
+
+<label>
+Naturalidade
+</label>
+
+<input
+type="text"
+name="Naturalidade"
+placeholder="Digite a naturalidade"
+required>
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Data de nascimento
+</label>
+
+<input
+type="date"
+name="Data de nascimento"
+required>
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Província de nascimento
+</label>
+
+<select
+name="Província de nascimento"
+required>
+
+<option value="">
+Escolha a província
+</option>
+
+<option>
+Cabo Delgado
+</option>
+
+<option>
+Gaza
+</option>
+
+<option>
+Inhambane
+</option>
+
+<option>
+Manica
+</option>
+
+<option>
+Maputo Província
+</option>
+
+<option>
+Cidade de Maputo
+</option>
+
+<option>
+Nampula
+</option>
+
+<option>
+Niassa
+</option>
+
+<option>
+Sofala
+</option>
+
+<option>
+Tete
+</option>
+
+<option>
+Zambézia
+</option>
+
+</select>
+
+</div>
+
+
+
+<!-- ================================================
+     DADOS ACADÉMICOS
+================================================ -->
+
+<h3>
+Dados académicos
+</h3>
+
+
+<!-- PROVÍNCIA -->
+
+<div class="campo">
+
+<label
+for="provinciaEstudo">
+
+Província onde estudou
+
+</label>
+
+
+<select
+id="provinciaEstudo"
+name="Província onde estudou"
+onchange="carregarEscolas()"
+required>
+
+
+<option value="">
+
+Escolha a província
+
+</option>
+
+
+<option>
+Cabo Delgado
+</option>
+
+
+<option>
+Gaza
+</option>
+
+
+<option>
+Inhambane
+</option>
+
+
+<option>
+Manica
+</option>
+
+
+<option>
+Maputo Província
+</option>
+
+
+<option>
+Cidade de Maputo
+</option>
+
+
+<option>
+Nampula
+</option>
+
+
+<option>
+Niassa
+</option>
+
+
+<option>
+Sofala
+</option>
+
+
+<option>
+Tete
+</option>
+
+
+<option>
+Zambézia
+</option>
+
+
+</select>
+
+</div>
+
+
+
+<!-- ESCOLA -->
+
+<div class="campo">
+
+<label
+for="escola">
+
+Escola / Instituição onde estudou
+
+</label>
+
+
+<select
+id="escola"
+name="Escola / Instituição"
+required
+disabled>
+
+
+<option value="">
+
+Primeiro escolha a província
+
+</option>
+
+
+</select>
+
+
+<small>
+
+Depois de escolher Nampula,
+a lista será carregada automaticamente.
+
+</small>
+
+</div>
+
+
+
+<!-- CURSO -->
+
+<div class="campo">
+
+<label
+for="curso">
+
+Curso escolhido
+
+</label>
+
+
+<select
+id="curso"
+name="Curso escolhido"
+required>
+
+
+<option value="">
+
+Escolha o curso
+
+</option>
+
+
+<option>
+Programação
+</option>
+
+
+<option>
+Informática Básica
+</option>
+
+
+<option>
+Desenvolvimento Web
+</option>
+
+
+<option>
+Design Gráfico
+</option>
+
+
+<option>
+Marketing Digital
+</option>
+
+
+</select>
+
+</div>
+
+
+
+<!-- MENSAGEM -->
+
+<h3>
+Mensagem
+</h3>
+
+
+<div class="campo">
+
+<label>
+Mensagem
+</label>
+
+
+<textarea
+name="Mensagem"
+placeholder="Escreva uma mensagem">
+
+</textarea>
+
+</div>
+
+
+
+<!-- ENVIAR -->
+
+<button
+type="submit"
+class="enviar">
+
+Enviar inscrição
+
 </button>
+
 
 </form>
 
+
 <button
-class="login-back"
+class="botao azul"
 onclick="mostrarInicio()">
 
-← Voltar para o início
+← Voltar
 
 </button>
 
-<div id="resultadoLogin"></div>
 
 </div>
+
 </div>
+
 </section>
 
 
-<!-- ================= MODAL ================= -->
 
-<div class="modal" id="modalCurso">
+<!-- =====================================================
+     MODAL DOS CURSOS
+===================================================== -->
 
-<div class="modal-box">
+<div
+class="modal"
+id="modal">
 
-<span class="close" onclick="fecharCurso()">×</span>
 
-<h2 id="tituloCurso"></h2>
+<div
+class="modal-box">
 
-<p id="descricaoCurso"></p>
 
-<button
-class="btn btn-yellow"
-onclick="fecharCurso();abrirInscricao();">
+<span
+class="fechar"
+onclick="fecharModal()">
 
-Inscrever-se
+×
 
-</button>
+</span>
+
+
+<h2
+id="cursoTitulo">
+</h2>
+
+
+<p
+id="cursoDescricao">
+</p>
+
 
 </div>
+
 </div>
 
+
+
+<!-- =====================================================
+     RODAPÉ
+===================================================== -->
 
 <footer>
 
-<strong>Caixote Cursos Online</strong>
+<strong>
+Caixote Cursos Online
+</strong>
+
 
 <p>
-© 2026 Caixote Cursos Online.
-Todos os direitos reservados.
+© 2026 — Todos os direitos reservados.
+</p>
+
+
+<p>
+Cursos • E-books • Formação Online
 </p>
 
 </footer>
 
 
-<!-- ================= SUPABASE ================= -->
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
 
-/*
-====================================================
-CONFIGURAÇÃO
-====================================================
 
-2. COLOQUE A SUA CHAVE PÚBLICA DO SUPABASE
-
-====================================================
-*/
-
-const EMAIL_DESTINO = "delciocaixote1@gmail.com";
-
-const SUPABASE_URL =
-"https://ihsjrfiwyeidzhslkiwy.supabase.co";
-
-const SUPABASE_KEY =
-"sb_publishable_Bia92BfE9caIg1ih-C_0FA_gIjRphFj";
-
-
-const { createClient } = supabase;
-
-const supabaseClient =
-createClient(
-SUPABASE_URL,
-SUPABASE_KEY
-);
-
-
-/* ================= MENU ================= */
+/* =====================================================
+   MENU
+===================================================== */
 
 function abrirMenu(){
 
-const nav =
-document.getElementById("navLinks");
-
-nav.classList.toggle("active");
+document
+.getElementById("navLinks")
+.classList.toggle("ativo");
 
 }
+
 
 function fecharMenu(){
 
 document
 .getElementById("navLinks")
-.classList.remove("active");
+.classList.remove("ativo");
 
 }
 
 
-/* ================= INÍCIO ================= */
+
+/* =====================================================
+   MOSTRAR INÍCIO
+===================================================== */
 
 function mostrarInicio(){
 
-document.getElementById("paginaInicial")
+document
+.getElementById("inicio")
+.style.display="flex";
+
+
+document
+.getElementById("cursos")
 .style.display="block";
 
-document.getElementById("areaInscricao")
-.style.display="none";
 
-document.getElementById("areaLogin")
-.style.display="none";
-
-fecharMenu();
-
-window.scrollTo(0,0);
-
-}
-
-
-/* ================= INSCRIÇÃO ================= */
-
-function abrirInscricao(){
-
-document.getElementById("paginaInicial")
-.style.display="none";
-
-document.getElementById("areaLogin")
-.style.display="none";
-
-document.getElementById("areaInscricao")
+document
+.getElementById("ebooks")
 .style.display="block";
 
-fecharMenu();
 
-window.scrollTo(0,0);
-
-}
-
-
-/* ================= LOGIN ================= */
-
-function abrirLogin(event){
-
-if(event){
-event.preventDefault();
-}
-
-document.getElementById("paginaInicial")
-.style.display="none";
-
-document.getElementById("areaInscricao")
-.style.display="none";
-
-document.getElementById("areaLogin")
+document
+.getElementById("contacto")
 .style.display="block";
 
-fecharMenu();
 
-window.scrollTo(0,0);
-
-}
-
-
-/* ================= CURSOS ================= */
-
-function abrirCurso(titulo,descricao){
-
-document.getElementById("tituloCurso")
-.textContent=titulo;
-
-document.getElementById("descricaoCurso")
-.textContent=descricao;
-
-document.getElementById("modalCurso")
-.style.display="block";
-
-}
-
-function fecharCurso(){
-
-document.getElementById("modalCurso")
+document
+.getElementById("inscricao")
 .style.display="none";
 
-}
 
+window.scrollTo({
 
-/* ==================================================
-   INSCRIÇÃO
-================================================== */
+top:0,
 
-document.getElementById("formInscricao")
-.addEventListener(
-"submit",
-async function(event){
-
-event.preventDefault();
-
-const botao =
-document.getElementById("botao");
-
-const resultado =
-document.getElementById("resultado");
-
-const email =
-document.getElementById("email")
-.value.trim();
-
-const password =
-document.getElementById("password")
-.value;
-
-const passwordConfirm =
-document.getElementById("passwordConfirm")
-.value;
-
-
-if(password !== passwordConfirm){
-
-resultado.textContent =
-"As palavras-passe não coincidem.";
-
-resultado.className="error";
-
-return;
-
-}
-
-
-botao.disabled=true;
-
-botao.textContent="Enviando inscrição...";
-
-
-/* =========================
-   CRIAR CONTA SUPABASE
-========================= */
-
-const { data:authData,error:authError } =
-await supabaseClient.auth.signUp({
-
-email:email,
-
-password:password
+behavior:"smooth"
 
 });
 
+}
 
-if(authError){
 
-resultado.textContent =
-"Erro ao criar a conta: " +
-authError.message;
 
-resultado.className="error";
+/* =====================================================
+   ABRIR INSCRIÇÃO
+===================================================== */
 
-botao.disabled=false;
+function abrirInscricao(){
 
-botao.textContent =
-"Criar conta e enviar inscrição";
+document
+.getElementById("inicio")
+.style.display="none";
 
-return;
+
+document
+.getElementById("cursos")
+.style.display="none";
+
+
+document
+.getElementById("ebooks")
+.style.display="none";
+
+
+document
+.getElementById("contacto")
+.style.display="none";
+
+
+document
+.getElementById("inscricao")
+.style.display="block";
+
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
 
 }
 
 
-/* =========================
-   DADOS
-========================= */
 
-const dados={
+/* =====================================================
+   INFORMAÇÕES DOS CURSOS
+===================================================== */
 
-id_usuario:
-authData.user
-? authData.user.id
-:null,
+function mostrarCurso(
+titulo,
+descricao
+){
 
-nome:
-document.getElementById("nome").value.trim(),
+document
+.getElementById("cursoTitulo")
+.textContent=titulo;
 
-apelido:
-document.getElementById("apelido").value.trim(),
 
-nome_pai:
-document.getElementById("nome_pai").value.trim(),
+document
+.getElementById("cursoDescricao")
+.textContent=descricao;
 
-nome_mae:
-document.getElementById("nome_mae").value.trim(),
 
-numero_bi:
-document.getElementById("numero_bi").value.trim(),
+document
+.getElementById("modal")
+.style.display="block";
 
-email:email,
+}
 
-telefone:
-document.getElementById("telefone").value.trim(),
 
-naturalidade:
-document.getElementById("naturalidade").value.trim(),
 
-data_nascimento:
-document.getElementById("data_nascimento").value,
+/* =====================================================
+   FECHAR MODAL
+===================================================== */
 
-provincia_nascimento:
-document.getElementById("provincia_nascimento").value,
+function fecharModal(){
 
-escola:
-document.getElementById("escola").value,
+document
+.getElementById("modal")
+.style.display="none";
 
-curso:
-document.getElementById("curso").value,
+}
 
-mensagem:
-document.getElementById("mensagem").value.trim()
+
+
+/* =====================================================
+   ESCOLAS / INSTITUIÇÕES
+=====================================================
+
+   IMPORTANTE:
+
+   NAMPULA inclui:
+
+   - Distrito de Nampula
+   - Rapale
+   - Murrupula
+   - Mecubúri
+   - Meconta
+   - Muecate
+   - Mogovolas
+   - Ribáuè
+
+   O candidato NÃO verá os distritos.
+   Verá apenas uma lista de escolas/instituições.
+
+===================================================== */
+
+
+const escolas = {
+
+
+/* =====================================================
+   NAMPULA
+===================================================== */
+
+"Nampula":[
+
+
+/* Distrito de Nampula */
+
+"Escola / Instituição do Distrito de Nampula",
+
+"Escola / Instituição - Anchilo",
+
+"Escola / Instituição - Muatala",
+
+"Escola / Instituição - Muhala",
+
+"Escola / Instituição - Namicopo",
+
+"Escola / Instituição - Napipine",
+
+"Escola / Instituição - Natikiri",
+
+"Escola / Instituição - Urbano Central",
+
+
+/* Distritos próximos */
+
+"Escola / Instituição de Rapale",
+
+"Escola / Instituição de Murrupula",
+
+"Escola / Instituição de Mecubúri",
+
+"Escola / Instituição de Meconta",
+
+"Escola / Instituição de Muecate",
+
+"Escola / Instituição de Mogovolas",
+
+"Escola / Instituição de Ribáuè",
+
+
+"Outra escola/instituição de Nampula"
+
+],
+
+
+
+/* =====================================================
+   CABO DELGADO
+===================================================== */
+
+"Cabo Delgado":[
+
+"Escola / Instituição de Cabo Delgado",
+
+"Outra escola/instituição"
+
+],
+
+
+
+/* =====================================================
+   GAZA
+===================================================== */
+
+"Gaza":[
+
+"Escola / Instituição de Gaza",
+
+"Outra escola/instituição"
+
+],
+
+
+
+/* =====================================================
+   INHAMBANE
+===================================================== */
+
+"Inhambane":[
+
+"Escola / Instituição de Inhambane",
+
+"Outra escola/instituição"
+
+],
+
+
+
+/* =====================================================
+   MANICA
+===================================================== */
+
+"Manica":[
+
+"Escola / Instituição de Manica",
+
+"Outra escola/instituição"
+
+],
+
+
+
+/* =====================================================
+   MAPUTO PROVÍNCIA
+===================================================== */
+
+"Maputo Província":[
+
+"Escola / Instituição de Maputo Província",
+
+"Outra escola/instituição"
+
+],
+
+
+
+/* =====================================================
+   CIDADE DE MAPUTO
+===================================================== */
+
+"Cidade de Maputo":[
+
+"Escola / Instituição da Cidade de Maputo",
+
+"Outra escola/instituição"
+
+],
+
+
+
+/* =====================================================
+   NIASSA
+===================================================== */
+
+"Niassa":[
+
+"Escola / Instituição de Niassa",
+
+"Outra escola/instituição"
+
+],
+
+
+
+/* =====================================================
+   SOFALA
+===================================================== */
+
+"Sofala":[
+
+"Escola / Instituição de Sofala",
+
+"Outra escola/instituição"
+
+],
+
+
+
+/* =====================================================
+   TETE
+===================================================== */
+
+"Tete":[
+
+"Escola / Instituição de Tete",
+
+"Outra escola/instituição"
+
+],
+
+
+
+/* =====================================================
+   ZAMBÉZIA
+===================================================== */
+
+"Zambézia":[
+
+"Escola / Instituição da Zambézia",
+
+"Outra escola/instituição"
+
+]
 
 };
 
 
-/* =========================
-   GUARDAR NO SUPABASE
-========================= */
 
-const {error:insertError} =
-await supabaseClient
-.from("inscricoes")
-.insert([dados]);
+/* =====================================================
+   CARREGAR ESCOLAS
+===================================================== */
 
+function carregarEscolas(){
 
-if(insertError){
 
-console.error(insertError);
-
-resultado.textContent =
-"A conta foi criada, mas houve um erro ao guardar a inscrição.";
-
-resultado.className="error";
-
-botao.disabled=false;
-
-botao.textContent =
-"Criar conta e enviar inscrição";
-
-return;
-}
-  
-/* ==================================================
-   ENVIAR E-MAIL PELO FORMSUBMIT
-================================================== */
-
-try {
-
-    const htmlEmail = `
-    <!DOCTYPE html>
-    <html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <title>Nova inscrição</title>
-    </head>
-
-    <body style="
-        margin:0;
-        padding:20px;
-        font-family:Arial,Helvetica,sans-serif;
-        background:#f2f5f8;
-        color:#172436;
-    ">
-
-        <div style="
-            max-width:750px;
-            margin:auto;
-            background:white;
-            border-radius:10px;
-            overflow:hidden;
-            border:1px solid #dce3ea;
-        ">
-
-            <div style="
-                background:#061f3d;
-                color:white;
-                padding:22px;
-                text-align:center;
-            ">
-                <h2 style="margin:0;">
-                    Nova inscrição
-                </h2>
-
-                <p style="
-                    margin:6px 0 0;
-                    color:#d8e2ed;
-                ">
-                    Caixote Cursos Online
-                </p>
-            </div>
-
-
-            <table style="
-                width:100%;
-                border-collapse:collapse;
-                font-size:14px;
-            ">
-
-                <!-- DADOS PESSOAIS -->
-
-                <tr>
-                    <td colspan="2" style="
-                        background:#f5b900;
-                        color:#061f3d;
-                        padding:14px;
-                        font-size:17px;
-                        font-weight:bold;
-                        text-align:center;
-                    ">
-                        DADOS PESSOAIS
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td style="
-                        width:40%;
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                        font-weight:bold;
-                    ">
-                        Nome completo
-                    </td>
-
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                    ">
-                        ${dados.nome}
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                        font-weight:bold;
-                    ">
-                        Apelido
-                    </td>
-
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                    ">
-                        ${dados.apelido}
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                        font-weight:bold;
-                    ">
-                        Nome do pai
-                    </td>
-
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                    ">
-                        ${dados.nome_pai}
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                        font-weight:bold;
-                    ">
-                        Nome da mãe
-                    </td>
-
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                    ">
-                        ${dados.nome_mae}
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                        font-weight:bold;
-                    ">
-                        Número do BI
-                    </td>
-
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                    ">
-                        ${dados.numero_bi}
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                        font-weight:bold;
-                    ">
-                        E-mail
-                    </td>
-
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                    ">
-                        ${dados.email}
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                        font-weight:bold;
-                    ">
-                        WhatsApp
-                    </td>
-
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                    ">
-                        ${dados.telefone}
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                        font-weight:bold;
-                    ">
-                        Naturalidade
-                    </td>
-
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                    ">
-                        ${dados.naturalidade}
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                        font-weight:bold;
-                    ">
-                        Data de nascimento
-                    </td>
-
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                    ">
-                        ${dados.data_nascimento}
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                        font-weight:bold;
-                    ">
-                        Província de nascimento
-                    </td>
-
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                    ">
-                        ${dados.provincia_nascimento}
-                    </td>
-                </tr>
-
-
-                <!-- DADOS ACADÉMICOS -->
-
-                <tr>
-                    <td colspan="2" style="
-                        background:#061f3d;
-                        color:white;
-                        padding:14px;
-                        font-size:17px;
-                        font-weight:bold;
-                        text-align:center;
-                    ">
-                        DADOS ACADÉMICOS
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                        font-weight:bold;
-                    ">
-                        Escola / Instituição
-                    </td>
-
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                    ">
-                        ${dados.escola}
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                        font-weight:bold;
-                    ">
-                        Curso
-                    </td>
-
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                    ">
-                        ${dados.curso}
-                    </td>
-                </tr>
-
-
-                <!-- MENSAGEM -->
-
-                <tr>
-                    <td colspan="2" style="
-                        background:#f5b900;
-                        color:#061f3d;
-                        padding:14px;
-                        font-size:17px;
-                        font-weight:bold;
-                        text-align:center;
-                    ">
-                        MENSAGEM
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                        font-weight:bold;
-                    ">
-                        Mensagem
-                    </td>
-
-                    <td style="
-                        padding:11px;
-                        border:1px solid #dce3ea;
-                    ">
-                        ${dados.mensagem || "Nenhuma mensagem"}
-                    </td>
-                </tr>
-
-            </table>
-
-
-            <div style="
-                background:#f5f7f9;
-                padding:15px;
-                text-align:center;
-                color:#667386;
-                font-size:12px;
-            ">
-                Caixote Cursos Online — Nova inscrição
-            </div>
-
-        </div>
-
-    </body>
-    </html>
-    `;
-
-
-    const formularioEmail = new FormData();
-
-    formularioEmail.append(
-        "_subject",
-        "Nova inscrição - Caixote Cursos Online"
-    );
-
-    formularioEmail.append(
-        "_captcha",
-        "false"
-    );
-
-    /*
-       Envia a tabela HTML personalizada
-    */
-
-    formularioEmail.append(
-        "message",
-        htmlEmail
-    );
-
-
-    const respostaEmail = await fetch(
-        "https://formsubmit.co/ajax/" + EMAIL_DESTINO,
-        {
-            method:"POST",
-
-            body:formularioEmail,
-
-            headers:{
-                "Accept":"application/json"
-            }
-        }
-    );
-
-
-    if(!respostaEmail.ok){
-
-        throw new Error(
-            "Não foi possível enviar o e-mail."
-        );
-
-    }
-
-
-} catch(erro){
-
-    console.error(erro);
-
-    resultado.textContent =
-        "Inscrição guardada com sucesso, mas ocorreu um problema ao enviar o e-mail.";
-
-    resultado.className="error";
-
-    botao.disabled=false;
-
-    botao.textContent =
-        "Criar conta e enviar inscrição";
-
-    return;
-}
-/* =========================
-   SUCESSO
-========================= */
-
-resultado.textContent =
-"Inscrição enviada com sucesso! Os dados foram guardados e enviados para o e-mail.";
-
-resultado.className="success";
+const provincia =
 
 document
-.getElementById("formInscricao")
-.reset();
-
-botao.disabled=false;
-
-botao.textContent =
-"Criar conta e enviar inscrição";
-
-});
-
-
-/* ==================================================
-   LOGIN
-================================================== */
-
-document.getElementById("formLogin")
-.addEventListener(
-"submit",
-async function(event){
-
-event.preventDefault();
-
-const email =
-document.getElementById("loginEmail")
-.value.trim();
-
-const password =
-document.getElementById("loginPassword")
+.getElementById("provinciaEstudo")
 .value;
 
-const resultado =
-document.getElementById("resultadoLogin");
+
+const escola =
+
+document
+.getElementById("escola");
 
 
-const {data,error} =
-await supabaseClient.auth.signInWithPassword({
 
-email:email,
+/* Limpar lista */
 
-password:password
-
-});
+escola.innerHTML="";
 
 
-if(error){
 
-resultado.textContent =
-"E-mail ou palavra-passe incorretos.";
+/* Se nenhuma província foi escolhida */
 
-resultado.className="error";
+if(!provincia){
+
+escola.disabled=true;
+
+
+const opcao=
+
+document.createElement("option");
+
+opcao.value="";
+
+opcao.textContent=
+"Primeiro escolha a província";
+
+escola.appendChild(opcao);
 
 return;
 
 }
 
 
-resultado.textContent =
-"Login realizado com sucesso.";
 
-resultado.className="success";
+/* Ativar campo */
 
-});
+escola.disabled=false;
 
 
-/* =========================
-   MODAL
-========================= */
 
-window.addEventListener(
-"click",
+/* Primeira opção */
+
+const inicial=
+
+document.createElement("option");
+
+inicial.value="";
+
+inicial.textContent=
+"Escolha a escola/instituição";
+
+escola.appendChild(inicial);
+
+
+
+/* Procurar escolas */
+
+const lista=
+
+escolas[provincia] || [];
+
+
+
+/* Criar opções */
+
+lista.forEach(
+
+function(nome){
+
+const option=
+
+document.createElement("option");
+
+
+option.value=nome;
+
+option.textContent=nome;
+
+
+escola.appendChild(option);
+
+}
+
+);
+
+
+
+/* Outra instituição */
+
+const outra=
+
+document.createElement("option");
+
+outra.value=
+"Outra escola/instituição";
+
+outra.textContent=
+"Outra escola/instituição";
+
+
+escola.appendChild(outra);
+
+}
+
+
+
+/* =====================================================
+   FECHAR MODAL CLICANDO FORA
+===================================================== */
+
+window.onclick=
+
 function(event){
 
-const modal =
-document.getElementById("modalCurso");
+const modal=
+document.getElementById("modal");
+
 
 if(event.target===modal){
 
-fecharCurso();
+fecharModal();
 
 }
 
-});
+};
 
 </script>
+
 
 </body>
 </html>
