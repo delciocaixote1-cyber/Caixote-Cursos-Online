@@ -1576,79 +1576,98 @@ return;
 }
 
 
+
 /* ==================================================
    ENVIAR E-MAIL PELO FORMSUBMIT
 ================================================== */
 
 try{
 
-const formularioEmail =
-new FormData();
+const formularioEmail = new FormData();
+
+/* =========================
+   DADOS PESSOAIS
+========================= */
 
 formularioEmail.append(
-"Nome completo",
+"DADOS PESSOAIS - Nome completo",
 dados.nome
 );
 
 formularioEmail.append(
-"Apelido",
+"DADOS PESSOAIS - Apelido",
 dados.apelido
 );
 
 formularioEmail.append(
-"Nome do pai",
+"DADOS PESSOAIS - Nome do pai",
 dados.nome_pai
 );
 
 formularioEmail.append(
-"Nome da mãe",
+"DADOS PESSOAIS - Nome da mãe",
 dados.nome_mae
 );
 
 formularioEmail.append(
-"Número do BI",
+"DADOS PESSOAIS - Número do BI",
 dados.numero_bi
 );
 
 formularioEmail.append(
-"E-mail",
+"DADOS PESSOAIS - E-mail",
 dados.email
 );
 
 formularioEmail.append(
-"WhatsApp",
+"DADOS PESSOAIS - WhatsApp",
 dados.telefone
 );
 
 formularioEmail.append(
-"Naturalidade",
+"DADOS PESSOAIS - Naturalidade",
 dados.naturalidade
 );
 
 formularioEmail.append(
-"Data de nascimento",
+"DADOS PESSOAIS - Data de nascimento",
 dados.data_nascimento
 );
 
 formularioEmail.append(
-"Província",
+"DADOS PESSOAIS - Província de nascimento",
 dados.provincia_nascimento
 );
 
+
+/* =========================
+   DADOS ACADÉMICOS
+========================= */
+
 formularioEmail.append(
-"Escola / Instituição",
+"DADOS ACADÉMICOS - Escola / Instituição",
 dados.escola
 );
 
 formularioEmail.append(
-"Curso",
+"DADOS ACADÉMICOS - Curso",
 dados.curso
 );
 
+
+/* =========================
+   MENSAGEM
+========================= */
+
 formularioEmail.append(
-"Mensagem",
-dados.mensagem
+"MENSAGEM",
+dados.mensagem || "Nenhuma mensagem"
 );
+
+
+/* =========================
+   CONFIGURAÇÃO
+========================= */
 
 formularioEmail.append(
 "_subject",
@@ -1666,10 +1685,13 @@ formularioEmail.append(
 );
 
 
+/* =========================
+   ENVIO
+========================= */
+
 const respostaEmail =
 await fetch(
-"https://formsubmit.co/ajax/" +
-EMAIL_DESTINO,
+"https://formsubmit.co/ajax/" + EMAIL_DESTINO,
 {
 method:"POST",
 body:formularioEmail,
@@ -1705,8 +1727,6 @@ botao.textContent =
 return;
 
 }
-
-
 /* =========================
    SUCESSO
 ========================= */
