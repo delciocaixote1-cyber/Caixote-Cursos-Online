@@ -7,15 +7,11 @@
 <title>Caixote Cursos Online</title>
 
 <style>
-
-/* =========================
-   CORES
-========================= */
-
 :root{
     --azul:#061f3d;
     --azul2:#0b315d;
     --azul3:#124577;
+    --azul4:#173f69;
     --amarelo:#f5b900;
     --amarelo2:#ffd34d;
     --branco:#ffffff;
@@ -24,11 +20,6 @@
     --erro:#ff6b6b;
     --sucesso:#48d597;
 }
-
-
-/* =========================
-   GERAL
-========================= */
 
 *{
     margin:0;
@@ -47,10 +38,7 @@ body{
     line-height:1.6;
 }
 
-button,
-input,
-select,
-textarea{
+button,input,select,textarea{
     font-family:inherit;
 }
 
@@ -60,21 +48,18 @@ textarea{
     margin:auto;
 }
 
-
-/* =========================
-   CABEÇALHO
-========================= */
+/* ================= HEADER ================= */
 
 header{
     background:var(--azul);
-    border-bottom:1px solid rgba(255,255,255,.10);
+    border-bottom:1px solid rgba(255,255,255,.12);
     position:sticky;
     top:0;
     z-index:1000;
 }
 
 .navbar{
-    height:72px;
+    min-height:72px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -110,25 +95,20 @@ header{
 
 .login-btn{
     background:var(--amarelo);
-    color:var(--azul) !important;
+    color:var(--azul)!important;
     padding:10px 18px;
     border-radius:7px;
 }
 
-.login-btn:hover{
-    background:var(--amarelo2);
-}
-
 .menu{
     display:none;
-    font-size:25px;
+    font-size:28px;
     cursor:pointer;
+    color:white;
+    user-select:none;
 }
 
-
-/* =========================
-   HERO
-========================= */
+/* ================= HERO ================= */
 
 .hero{
     background:var(--azul);
@@ -197,12 +177,12 @@ header{
 }
 
 .hero-card{
-    background:var(--azul2);
+    background:linear-gradient(145deg,var(--azul2),var(--azul3));
     border:1px solid rgba(255,255,255,.12);
     border-top:4px solid var(--amarelo);
     border-radius:14px;
     padding:32px;
-    box-shadow:0 15px 40px rgba(0,0,0,.25);
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
 }
 
 .hero-icon{
@@ -239,10 +219,7 @@ header{
     color:var(--amarelo);
 }
 
-
-/* =========================
-   SEÇÕES
-========================= */
+/* ================= SEÇÕES ================= */
 
 section{
     padding:75px 0;
@@ -262,13 +239,10 @@ section{
     color:var(--cinza);
 }
 
-
-/* =========================
-   CURSOS
-========================= */
+/* ================= CURSOS ================= */
 
 #cursos{
-    background:var(--azul2);
+    background:linear-gradient(135deg,#09294e,#0d3968);
 }
 
 .courses{
@@ -278,7 +252,7 @@ section{
 }
 
 .course-card{
-    background:var(--azul3);
+    background:linear-gradient(145deg,var(--azul3),#185284);
     border:1px solid rgba(255,255,255,.10);
     border-radius:12px;
     padding:25px;
@@ -288,7 +262,7 @@ section{
 .course-card:hover{
     transform:translateY(-5px);
     border-color:var(--amarelo);
-    box-shadow:0 12px 30px rgba(0,0,0,.20);
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
 }
 
 .course-icon{
@@ -323,17 +297,14 @@ section{
     cursor:pointer;
 }
 
-
-/* =========================
-   PROFESSOR
-========================= */
+/* ================= PROFESSOR ================= */
 
 #professor{
     background:var(--azul);
 }
 
 .teacher{
-    background:var(--azul2);
+    background:linear-gradient(145deg,var(--azul2),var(--azul4));
     border:1px solid rgba(255,255,255,.10);
     border-radius:14px;
     padding:40px;
@@ -359,7 +330,6 @@ section{
 }
 
 .teacher h2{
-    color:white;
     margin-bottom:3px;
 }
 
@@ -372,13 +342,10 @@ section{
     color:var(--cinza);
 }
 
-
-/* =========================
-   CONTACTO
-========================= */
+/* ================= CONTACTO ================= */
 
 #contacto{
-    background:var(--amarelo);
+    background:linear-gradient(135deg,var(--amarelo),#e7a900);
     color:var(--azul);
     text-align:center;
 }
@@ -408,10 +375,7 @@ section{
     font-weight:bold;
 }
 
-
-/* =========================
-   FORMULÁRIO
-========================= */
+/* ================= INSCRIÇÃO ================= */
 
 #areaInscricao{
     display:none;
@@ -435,12 +399,12 @@ section{
 .form-box{
     max-width:760px;
     margin:auto;
-    background:var(--branco);
+    background:white;
     color:#172436;
     border-radius:14px;
     padding:32px;
     border-top:5px solid var(--amarelo);
-    box-shadow:0 15px 40px rgba(0,0,0,.25);
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
 }
 
 .form-title{
@@ -532,11 +496,6 @@ section{
     cursor:pointer;
 }
 
-.back-btn:hover{
-    background:var(--amarelo);
-    color:var(--azul);
-}
-
 #resultado{
     margin-top:15px;
     padding:12px;
@@ -546,21 +505,18 @@ section{
 }
 
 .success{
-    display:block !important;
+    display:block!important;
     background:#d9f8e9;
     color:#12663e;
 }
 
 .error{
-    display:block !important;
+    display:block!important;
     background:#ffe0e0;
     color:#a51d1d;
 }
 
-
-/* =========================
-   LOGIN
-========================= */
+/* ================= LOGIN ================= */
 
 #areaLogin{
     display:none;
@@ -585,7 +541,7 @@ section{
     margin-bottom:7px;
 }
 
-.login-box > p{
+.login-box>p{
     text-align:center;
     color:#667386;
     margin-bottom:25px;
@@ -611,21 +567,14 @@ section{
     cursor:pointer;
 }
 
-.login-box button:hover{
-    background:var(--amarelo2);
-}
-
 .login-back{
     display:block;
     margin:18px auto 0;
-    background:none !important;
-    color:var(--azul) !important;
+    background:none!important;
+    color:var(--azul)!important;
 }
 
-
-/* =========================
-   MODAL
-========================= */
+/* ================= MODAL ================= */
 
 .modal{
     display:none;
@@ -665,10 +614,7 @@ section{
     cursor:pointer;
 }
 
-
-/* =========================
-   RODAPÉ
-========================= */
+/* ================= FOOTER ================= */
 
 footer{
     background:#031327;
@@ -686,15 +632,41 @@ footer p{
     margin-top:5px;
 }
 
-
-/* =========================
-   MOBILE
-========================= */
+/* ================= MENU MOBILE ================= */
 
 @media(max-width:850px){
 
     .nav-links{
         display:none;
+        position:absolute;
+        top:72px;
+        left:0;
+        width:100%;
+        background:var(--azul2);
+        padding:20px;
+        flex-direction:column;
+        align-items:stretch;
+        gap:8px;
+        border-bottom:2px solid var(--amarelo);
+        box-shadow:0 10px 25px rgba(0,0,0,.3);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links a{
+        display:block;
+        padding:13px 15px;
+        border-radius:6px;
+    }
+
+    .nav-links a:hover{
+        background:var(--azul3);
+    }
+
+    .login-btn{
+        text-align:center;
     }
 
     .menu{
@@ -722,7 +694,11 @@ footer p{
 @media(max-width:550px){
 
     .navbar{
-        height:65px;
+        min-height:65px;
+    }
+
+    .nav-links{
+        top:65px;
     }
 
     .logo{
@@ -756,67 +732,52 @@ footer p{
     section{
         padding:55px 0;
     }
-
 }
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================
-     CABEÇALHO
-========================= -->
-
 <header>
-
 <div class="container navbar">
 
 <a href="#" class="logo" onclick="mostrarInicio()">
 Caixote <span>Cursos Online</span>
 </a>
 
-<nav class="nav-links">
+<nav class="nav-links" id="navLinks">
 
-<a href="#" onclick="mostrarInicio()">
+<a href="#" onclick="mostrarInicio();fecharMenu();">
 Início
 </a>
 
-<a href="#cursos">
+<a href="#cursos" onclick="fecharMenu();">
 Cursos
 </a>
 
-<a href="#professor">
+<a href="#professor" onclick="fecharMenu();">
 Professor
 </a>
 
-<a href="#contacto">
+<a href="#contacto" onclick="fecharMenu();">
 Contacto
 </a>
 
-<a href="#" class="login-btn" onclick="abrirLogin(event)">
+<a href="#" class="login-btn" onclick="abrirLogin(event);fecharMenu();">
 Iniciar sessão
 </a>
 
 </nav>
 
-<div class="menu">
+<div class="menu" id="menuBtn" onclick="abrirMenu()">
 ☰
 </div>
 
 </div>
-
 </header>
 
 
-<!-- =========================
-     PÁGINA PRINCIPAL
-========================= -->
-
 <main id="paginaInicial">
-
 
 <section class="hero">
 
@@ -837,36 +798,23 @@ de uma plataforma simples e acessível.
 
 <div class="buttons">
 
-<button
-class="btn btn-yellow"
-onclick="abrirInscricao()">
-
+<button class="btn btn-yellow" onclick="abrirInscricao()">
 Entrar na plataforma de inscrição
-
 </button>
 
-<a
-href="#cursos"
-class="btn btn-outline">
-
+<a href="#cursos" class="btn btn-outline">
 Ver cursos
-
 </a>
 
 </div>
 
 </div>
 
-
 <div class="hero-card">
 
-<div class="hero-icon">
-C
-</div>
+<div class="hero-icon">C</div>
 
-<h3>
-Caixote Cursos Online
-</h3>
+<h3>Caixote Cursos Online</h3>
 
 <p>
 Formação, conhecimento e desenvolvimento
@@ -891,246 +839,103 @@ de competências para o futuro.
 </div>
 
 </div>
-
 </section>
 
-
-<!-- CURSOS -->
 
 <section id="cursos">
 
 <div class="container">
 
 <div class="section-title">
-
-<h2>
-Cursos
-</h2>
-
-<p>
-Conheça algumas das formações disponíveis.
-</p>
-
+<h2>Cursos</h2>
+<p>Conheça algumas das formações disponíveis.</p>
 </div>
-
 
 <div class="courses">
 
+<div class="course-card">
+<div class="course-icon">IF</div>
+<h3>Informática Básica</h3>
+<p>Aprenda os fundamentos da informática e das principais ferramentas digitais.</p>
+<button class="course-link"
+onclick="abrirCurso('Informática Básica','Aprenda os fundamentos da informática, utilização do computador, documentos e ferramentas digitais.')">
+Ver informações →
+</button>
+</div>
 
 <div class="course-card">
-
-<div class="course-icon">
-IF
-</div>
-
-<h3>
-Informática Básica
-</h3>
-
-<p>
-Aprenda os fundamentos da informática
-e das principais ferramentas digitais.
-</p>
-
-<button
-class="course-link"
-onclick="abrirCurso(
-'Informática Básica',
-'Aprenda os fundamentos da informática, utilização do computador, documentos e ferramentas digitais.'
-)">
-
+<div class="course-icon">PG</div>
+<h3>Programação</h3>
+<p>Conheça os fundamentos da programação e desenvolva os seus primeiros projetos.</p>
+<button class="course-link"
+onclick="abrirCurso('Programação','Aprenda os fundamentos da programação e desenvolva os seus primeiros projetos.')">
 Ver informações →
-
 </button>
-
 </div>
-
 
 <div class="course-card">
-
-<div class="course-icon">
-PG
-</div>
-
-<h3>
-Programação
-</h3>
-
-<p>
-Conheça os fundamentos da programação
-e desenvolva os seus primeiros projetos.
-</p>
-
-<button
-class="course-link"
-onclick="abrirCurso(
-'Programação',
-'Aprenda os fundamentos da programação e desenvolva os seus primeiros projetos.'
-)">
-
+<div class="course-icon">WB</div>
+<h3>Desenvolvimento Web</h3>
+<p>Aprenda a criar páginas e projetos para a Internet.</p>
+<button class="course-link"
+onclick="abrirCurso('Desenvolvimento Web','Aprenda HTML, CSS e JavaScript para criar páginas web.')">
 Ver informações →
-
 </button>
-
 </div>
-
 
 <div class="course-card">
-
-<div class="course-icon">
-WB
-</div>
-
-<h3>
-Desenvolvimento Web
-</h3>
-
-<p>
-Aprenda a criar páginas e projetos
-para a Internet.
-</p>
-
-<button
-class="course-link"
-onclick="abrirCurso(
-'Desenvolvimento Web',
-'Aprenda HTML, CSS e JavaScript para criar páginas web.'
-)">
-
+<div class="course-icon">DG</div>
+<h3>Design Gráfico</h3>
+<p>Aprenda princípios fundamentais de design e comunicação visual.</p>
+<button class="course-link"
+onclick="abrirCurso('Design Gráfico','Conheça os princípios de composição e criação de conteúdos visuais.')">
 Ver informações →
-
 </button>
-
 </div>
-
 
 <div class="course-card">
-
-<div class="course-icon">
-DG
-</div>
-
-<h3>
-Design Gráfico
-</h3>
-
-<p>
-Aprenda princípios fundamentais de
-design e comunicação visual.
-</p>
-
-<button
-class="course-link"
-onclick="abrirCurso(
-'Design Gráfico',
-'Conheça os princípios de composição e criação de conteúdos visuais.'
-)">
-
+<div class="course-icon">MD</div>
+<h3>Marketing Digital</h3>
+<p>Aprenda conceitos fundamentais de marketing no ambiente digital.</p>
+<button class="course-link"
+onclick="abrirCurso('Marketing Digital','Conheça ferramentas e estratégias fundamentais de marketing digital.')">
 Ver informações →
-
 </button>
-
 </div>
-
 
 <div class="course-card">
-
-<div class="course-icon">
-MD
-</div>
-
-<h3>
-Marketing Digital
-</h3>
-
-<p>
-Aprenda conceitos fundamentais de
-marketing no ambiente digital.
-</p>
-
-<button
-class="course-link"
-onclick="abrirCurso(
-'Marketing Digital',
-'Conheça ferramentas e estratégias fundamentais de marketing digital.'
-)">
-
+<div class="course-icon">+</div>
+<h3>Novas formações</h3>
+<p>Novos cursos serão adicionados à plataforma.</p>
+<button class="course-link"
+onclick="abrirCurso('Novas formações','Novas formações serão adicionadas futuramente.')">
 Ver informações →
-
 </button>
-
-</div>
-
-
-<div class="course-card">
-
-<div class="course-icon">
-+
-</div>
-
-<h3>
-Novas formações
-</h3>
-
-<p>
-Novos cursos serão adicionados
-à plataforma.
-</p>
-
-<button
-class="course-link"
-onclick="abrirCurso(
-'Novas formações',
-'Novas formações serão adicionadas futuramente.'
-)">
-
-Ver informações →
-
-</button>
-
 </div>
 
 </div>
-
 </div>
-
 </section>
 
-
-<!-- PROFESSOR -->
 
 <section id="professor">
 
 <div class="container">
 
 <div class="section-title">
-
-<h2>
-Professor Caixote
-</h2>
-
-<p>
-Responsável pelo projeto Caixote Cursos Online.
-</p>
-
+<h2>Professor Caixote</h2>
+<p>Responsável pelo projeto Caixote Cursos Online.</p>
 </div>
-
 
 <div class="teacher">
 
-<div class="teacher-photo">
-C
-</div>
+<div class="teacher-photo">C</div>
 
 <div>
 
-<h2>
-Professor Caixote
-</h2>
+<h2>Professor Caixote</h2>
 
-<h4>
-Fundador do Caixote Cursos Online
-</h4>
+<h4>Fundador do Caixote Cursos Online</h4>
 
 <p>
 O Caixote Cursos Online foi criado para
@@ -1143,68 +948,48 @@ e profissional.
 </div>
 
 </div>
-
 </div>
-
 </section>
 
-
-<!-- CONTACTO -->
 
 <section id="contacto">
 
 <div class="container">
 
-<h2>
-Fale connosco
-</h2>
+<h2>Fale connosco</h2>
 
 <p>
-Entre em contacto através de um dos
-nossos números de WhatsApp.
+Entre em contacto através de um dos nossos números de WhatsApp.
 </p>
 
 <div class="whatsapp-buttons">
 
-<a
-href="https://wa.me/258850313445"
+<a href="https://wa.me/258850313445"
 target="_blank"
 class="whatsapp">
-
 850 313 445
-
 </a>
 
-<a
-href="https://wa.me/258864576664"
+<a href="https://wa.me/258864576664"
 target="_blank"
 class="whatsapp">
-
 864 576 664
-
 </a>
 
-<a
-href="https://wa.me/258835316062"
+<a href="https://wa.me/258835316062"
 target="_blank"
 class="whatsapp">
-
 835 316 062
-
 </a>
 
 </div>
-
 </div>
-
 </section>
 
 </main>
 
 
-<!-- =========================
-     INSCRIÇÃO
-========================= -->
+<!-- ================= INSCRIÇÃO ================= -->
 
 <section id="areaInscricao">
 
@@ -1212,9 +997,7 @@ class="whatsapp">
 
 <div class="form-header">
 
-<h2>
-Plataforma de Inscrição
-</h2>
+<h2>Plataforma de Inscrição</h2>
 
 <p>
 Crie a sua conta e faça a sua inscrição.
@@ -1222,174 +1005,67 @@ Crie a sua conta e faça a sua inscrição.
 
 </div>
 
-
-<button
-class="back-btn"
-onclick="mostrarInicio()">
-
+<button class="back-btn" onclick="mostrarInicio()">
 ← Voltar
-
 </button>
-
 
 <div class="form-box">
 
 <form id="formInscricao">
 
-
-<h3 class="form-title">
-Dados pessoais
-</h3>
-
+<h3 class="form-title">Dados pessoais</h3>
 
 <div class="form-group">
-
-<label>
-Nome completo <span class="required">*</span>
-</label>
-
-<input
-type="text"
-id="nome"
-required
-placeholder="Nome completo">
-
+<label>Nome completo <span class="required">*</span></label>
+<input type="text" id="nome" name="nome" required placeholder="Nome completo">
 </div>
 
-
 <div class="form-group">
-
-<label>
-Apelido <span class="required">*</span>
-</label>
-
-<input
-type="text"
-id="apelido"
-required
-placeholder="Apelido">
-
+<label>Apelido <span class="required">*</span></label>
+<input type="text" id="apelido" name="apelido" required placeholder="Apelido">
 </div>
 
-
 <div class="form-group">
-
-<label>
-Nome do pai <span class="required">*</span>
-</label>
-
-<input
-type="text"
-id="nome_pai"
-required
-placeholder="Nome completo do pai">
-
+<label>Nome do pai <span class="required">*</span></label>
+<input type="text" id="nome_pai" name="nome_pai" required placeholder="Nome completo do pai">
 </div>
 
-
 <div class="form-group">
-
-<label>
-Nome da mãe <span class="required">*</span>
-</label>
-
-<input
-type="text"
-id="nome_mae"
-required
-placeholder="Nome completo da mãe">
-
+<label>Nome da mãe <span class="required">*</span></label>
+<input type="text" id="nome_mae" name="nome_mae" required placeholder="Nome completo da mãe">
 </div>
 
-
 <div class="form-group">
-
-<label>
-Número do BI <span class="required">*</span>
-</label>
-
-<input
-type="text"
-id="numero_bi"
-required
-placeholder="Número do BI">
-
+<label>Número do BI <span class="required">*</span></label>
+<input type="text" id="numero_bi" name="numero_bi" required placeholder="Número do BI">
 </div>
 
-
 <div class="form-group">
-
-<label>
-E-mail <span class="required">*</span>
-</label>
-
-<input
-type="email"
-id="email"
-required
-placeholder="exemplo@email.com">
-
+<label>E-mail <span class="required">*</span></label>
+<input type="email" id="email" name="email" required placeholder="exemplo@email.com">
 </div>
 
-
 <div class="form-group">
-
-<label>
-WhatsApp <span class="required">*</span>
-</label>
-
-<input
-type="tel"
-id="telefone"
-required
-placeholder="Ex.: 850313445">
-
+<label>WhatsApp <span class="required">*</span></label>
+<input type="tel" id="telefone" name="telefone" required placeholder="Ex.: 850313445">
 </div>
 
-
 <div class="form-group">
-
-<label>
-Naturalidade <span class="required">*</span>
-</label>
-
-<input
-type="text"
-id="naturalidade"
-required
-placeholder="Ex.: Nampula">
-
+<label>Naturalidade <span class="required">*</span></label>
+<input type="text" id="naturalidade" name="naturalidade" required placeholder="Ex.: Nampula">
 </div>
 
-
 <div class="form-group">
-
-<label>
-Data de nascimento <span class="required">*</span>
-</label>
-
-<input
-type="date"
-id="data_nascimento"
-required>
-
+<label>Data de nascimento <span class="required">*</span></label>
+<input type="date" id="data_nascimento" name="data_nascimento" required>
 </div>
 
-
 <div class="form-group">
+<label>Província de nascimento <span class="required">*</span></label>
 
-<label>
-Província de nascimento <span class="required">*</span>
-</label>
+<select id="provincia_nascimento" name="provincia_nascimento" required>
 
-<select
-id="provincia_nascimento"
-required>
-
-<option value="">
--- Escolha --
-</option>
-
+<option value="">-- Escolha --</option>
 <option>Cabo Delgado</option>
 <option>Gaza</option>
 <option>Inhambane</option>
@@ -1403,28 +1079,18 @@ required>
 <option>Zambézia</option>
 
 </select>
-
 </div>
 
 
-<h3 class="form-title">
-Dados académicos
-</h3>
-
+<h3 class="form-title">Dados académicos</h3>
 
 <div class="form-group">
 
-<label>
-Escola / Instituição <span class="required">*</span>
-</label>
+<label>Escola / Instituição <span class="required">*</span></label>
 
-<select
-id="escola"
-required>
+<select id="escola" name="escola" required>
 
-<option value="">
--- Escolha a escola --
-</option>
+<option value="">-- Escolha a escola --</option>
 
 <option>Escola Secundária de Nampula</option>
 <option>Escola Secundária de Muatala</option>
@@ -1441,23 +1107,15 @@ required>
 <option>Outra escola</option>
 
 </select>
-
 </div>
-
 
 <div class="form-group">
 
-<label>
-Curso <span class="required">*</span>
-</label>
+<label>Curso <span class="required">*</span></label>
 
-<select
-id="curso"
-required>
+<select id="curso" name="curso" required>
 
-<option value="">
--- Escolha o curso --
-</option>
+<option value="">-- Escolha o curso --</option>
 
 <option>Informática Básica</option>
 <option>Programação</option>
@@ -1467,20 +1125,14 @@ required>
 <option>Outro</option>
 
 </select>
-
 </div>
 
 
-<h3 class="form-title">
-Segurança da conta
-</h3>
-
+<h3 class="form-title">Segurança da conta</h3>
 
 <div class="form-group">
 
-<label>
-Palavra-passe <span class="required">*</span>
-</label>
+<label>Palavra-passe <span class="required">*</span></label>
 
 <input
 type="password"
@@ -1495,12 +1147,9 @@ Mínimo de 6 caracteres.
 
 </div>
 
-
 <div class="form-group">
 
-<label>
-Confirmar palavra-passe <span class="required">*</span>
-</label>
+<label>Confirmar palavra-passe <span class="required">*</span></label>
 
 <input
 type="password"
@@ -1511,17 +1160,14 @@ placeholder="Digite novamente a palavra-passe">
 
 </div>
 
-
 <div class="form-group">
 
-<label>
-Mensagem
-</label>
+<label>Mensagem</label>
 
 <textarea
 id="mensagem"
-placeholder="Mensagem opcional">
-</textarea>
+name="mensagem"
+placeholder="Mensagem opcional"></textarea>
 
 </div>
 
@@ -1535,21 +1181,16 @@ Criar conta e enviar inscrição
 
 </button>
 
-
 <div id="resultado"></div>
 
 </form>
 
 </div>
-
 </div>
-
 </section>
 
 
-<!-- =========================
-     LOGIN
-========================= -->
+<!-- ================= LOGIN ================= -->
 
 <section id="areaLogin">
 
@@ -1557,14 +1198,11 @@ Criar conta e enviar inscrição
 
 <div class="login-box">
 
-<h2>
-Iniciar sessão
-</h2>
+<h2>Iniciar sessão</h2>
 
 <p>
 Entre na sua conta do Caixote Cursos Online.
 </p>
-
 
 <form id="formLogin">
 
@@ -1574,22 +1212,17 @@ id="loginEmail"
 required
 placeholder="Seu e-mail">
 
-
 <input
 type="password"
 id="loginPassword"
 required
 placeholder="Sua palavra-passe">
 
-
 <button type="submit">
-
 Entrar
-
 </button>
 
 </form>
-
 
 <button
 class="login-back"
@@ -1599,32 +1232,20 @@ onclick="mostrarInicio()">
 
 </button>
 
-
 <div id="resultadoLogin"></div>
 
 </div>
-
 </div>
-
 </section>
 
 
-<!-- =========================
-     MODAL
-========================= -->
+<!-- ================= MODAL ================= -->
 
-<div
-class="modal"
-id="modalCurso">
+<div class="modal" id="modalCurso">
 
 <div class="modal-box">
 
-<span
-class="close"
-onclick="fecharCurso()">
-
-×
-</span>
+<span class="close" onclick="fecharCurso()">×</span>
 
 <h2 id="tituloCurso"></h2>
 
@@ -1639,19 +1260,12 @@ Inscrever-se
 </button>
 
 </div>
-
 </div>
 
 
-<!-- =========================
-     RODAPÉ
-========================= -->
-
 <footer>
 
-<strong>
-Caixote Cursos Online
-</strong>
+<strong>Caixote Cursos Online</strong>
 
 <p>
 © 2026 Caixote Cursos Online.
@@ -1661,26 +1275,29 @@ Todos os direitos reservados.
 </footer>
 
 
-<!-- =========================
-     SUPABASE
-========================= -->
+<!-- ================= SUPABASE ================= -->
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
 
 /*
-================================================
-1. COLOQUE AQUI A SUA PROJECT URL
-2. COLOQUE AQUI A SUA CHAVE PUBLICÁVEL
-================================================
+====================================================
+CONFIGURAÇÃO
+====================================================
+
+2. COLOQUE A SUA CHAVE PÚBLICA DO SUPABASE
+
+====================================================
 */
 
+const EMAIL_DESTINO = "delciocaixote1@gmail.com";
+
 const SUPABASE_URL =
-"https://ihsjrfiwyeidzhslkiwy.supabase.co/rest/v1/";
+"https://ihsjrfiwyeidzhslkiwy.supabase.co";
 
 const SUPABASE_KEY =
-sb_publishable_Bia92BfE9caIg1ih-C_0FA_gIjRphFj
+"sb_publishable_Bia92BfE9caIg1ih-C_0FA_gIjRphFj";
 
 
 const { createClient } = supabase;
@@ -1692,9 +1309,27 @@ SUPABASE_KEY
 );
 
 
-/* =========================
-   MOSTRAR INÍCIO
-========================= */
+/* ================= MENU ================= */
+
+function abrirMenu(){
+
+const nav =
+document.getElementById("navLinks");
+
+nav.classList.toggle("active");
+
+}
+
+function fecharMenu(){
+
+document
+.getElementById("navLinks")
+.classList.remove("active");
+
+}
+
+
+/* ================= INÍCIO ================= */
 
 function mostrarInicio(){
 
@@ -1707,14 +1342,14 @@ document.getElementById("areaInscricao")
 document.getElementById("areaLogin")
 .style.display="none";
 
+fecharMenu();
+
 window.scrollTo(0,0);
 
 }
 
 
-/* =========================
-   ABRIR INSCRIÇÃO
-========================= */
+/* ================= INSCRIÇÃO ================= */
 
 function abrirInscricao(){
 
@@ -1727,14 +1362,14 @@ document.getElementById("areaLogin")
 document.getElementById("areaInscricao")
 .style.display="block";
 
+fecharMenu();
+
 window.scrollTo(0,0);
 
 }
 
 
-/* =========================
-   ABRIR LOGIN
-========================= */
+/* ================= LOGIN ================= */
 
 function abrirLogin(event){
 
@@ -1751,14 +1386,14 @@ document.getElementById("areaInscricao")
 document.getElementById("areaLogin")
 .style.display="block";
 
+fecharMenu();
+
 window.scrollTo(0,0);
 
 }
 
 
-/* =========================
-   CURSOS
-========================= */
+/* ================= CURSOS ================= */
 
 function abrirCurso(titulo,descricao){
 
@@ -1773,7 +1408,6 @@ document.getElementById("modalCurso")
 
 }
 
-
 function fecharCurso(){
 
 document.getElementById("modalCurso")
@@ -1782,25 +1416,22 @@ document.getElementById("modalCurso")
 }
 
 
-/* =========================
+/* ==================================================
    INSCRIÇÃO
-========================= */
+================================================== */
 
-document.getElementById(
-"formInscricao"
-).addEventListener(
+document.getElementById("formInscricao")
+.addEventListener(
 "submit",
 async function(event){
 
 event.preventDefault();
-
 
 const botao =
 document.getElementById("botao");
 
 const resultado =
 document.getElementById("resultado");
-
 
 const email =
 document.getElementById("email")
@@ -1817,7 +1448,7 @@ document.getElementById("passwordConfirm")
 
 if(password !== passwordConfirm){
 
-resultado.textContent=
+resultado.textContent =
 "As palavras-passe não coincidem.";
 
 resultado.className="error";
@@ -1829,15 +1460,14 @@ return;
 
 botao.disabled=true;
 
-botao.textContent=
-"Criando conta...";
+botao.textContent="Enviando inscrição...";
 
 
-/*
-CRIAR CONTA NO SUPABASE AUTH
-*/
+/* =========================
+   CRIAR CONTA SUPABASE
+========================= */
 
-const { data: authData, error: authError } =
+const { data:authData,error:authError } =
 await supabaseClient.auth.signUp({
 
 email:email,
@@ -1849,14 +1479,15 @@ password:password
 
 if(authError){
 
-resultado.textContent=
+resultado.textContent =
+"Erro ao criar a conta: " +
 authError.message;
 
 resultado.className="error";
 
 botao.disabled=false;
 
-botao.textContent=
+botao.textContent =
 "Criar conta e enviar inscrição";
 
 return;
@@ -1864,16 +1495,16 @@ return;
 }
 
 
-/*
-DADOS DO ALUNO
-*/
+/* =========================
+   DADOS
+========================= */
 
 const dados={
 
 id_usuario:
 authData.user
 ? authData.user.id
-: null,
+:null,
 
 nome:
 document.getElementById("nome").value.trim(),
@@ -1916,11 +1547,11 @@ document.getElementById("mensagem").value.trim()
 };
 
 
-/*
-GUARDAR INSCRIÇÃO
-*/
+/* =========================
+   GUARDAR NO SUPABASE
+========================= */
 
-const { error: insertError } =
+const {error:insertError} =
 await supabaseClient
 .from("inscricoes")
 .insert([dados]);
@@ -1930,14 +1561,14 @@ if(insertError){
 
 console.error(insertError);
 
-resultado.textContent=
-"A conta foi criada, mas ocorreu um erro ao guardar os dados da inscrição.";
+resultado.textContent =
+"A conta foi criada, mas houve um erro ao guardar a inscrição.";
 
 resultado.className="error";
 
 botao.disabled=false;
 
-botao.textContent=
+botao.textContent =
 "Criar conta e enviar inscrição";
 
 return;
@@ -1945,57 +1576,182 @@ return;
 }
 
 
-/*
-SUCESSO
-*/
+/* ==================================================
+   ENVIAR E-MAIL PELO FORMSUBMIT
+================================================== */
 
-resultado.textContent=
-"Inscrição criada com sucesso! Verifique o seu e-mail caso a confirmação esteja ativada.";
+try{
 
-resultado.className="success";
+const formularioEmail =
+new FormData();
 
-document.getElementById(
-"formInscricao"
-).reset();
+formularioEmail.append(
+"Nome completo",
+dados.nome
+);
+
+formularioEmail.append(
+"Apelido",
+dados.apelido
+);
+
+formularioEmail.append(
+"Nome do pai",
+dados.nome_pai
+);
+
+formularioEmail.append(
+"Nome da mãe",
+dados.nome_mae
+);
+
+formularioEmail.append(
+"Número do BI",
+dados.numero_bi
+);
+
+formularioEmail.append(
+"E-mail",
+dados.email
+);
+
+formularioEmail.append(
+"WhatsApp",
+dados.telefone
+);
+
+formularioEmail.append(
+"Naturalidade",
+dados.naturalidade
+);
+
+formularioEmail.append(
+"Data de nascimento",
+dados.data_nascimento
+);
+
+formularioEmail.append(
+"Província",
+dados.provincia_nascimento
+);
+
+formularioEmail.append(
+"Escola / Instituição",
+dados.escola
+);
+
+formularioEmail.append(
+"Curso",
+dados.curso
+);
+
+formularioEmail.append(
+"Mensagem",
+dados.mensagem
+);
+
+formularioEmail.append(
+"_subject",
+"Nova inscrição - Caixote Cursos Online"
+);
+
+formularioEmail.append(
+"_captcha",
+"false"
+);
+
+formularioEmail.append(
+"_template",
+"table"
+);
+
+
+const respostaEmail =
+await fetch(
+"https://formsubmit.co/ajax/" +
+EMAIL_DESTINO,
+{
+method:"POST",
+body:formularioEmail,
+headers:{
+"Accept":"application/json"
+}
+}
+);
+
+
+if(!respostaEmail.ok){
+
+throw new Error(
+"Não foi possível enviar o e-mail."
+);
+
+}
+
+}catch(erro){
+
+console.error(erro);
+
+resultado.textContent =
+"Inscrição guardada com sucesso, mas o envio para o e-mail não foi concluído. Verifique a configuração do FormSubmit.";
+
+resultado.className="error";
 
 botao.disabled=false;
 
-botao.textContent=
+botao.textContent =
+"Criar conta e enviar inscrição";
+
+return;
+
+}
+
+
+/* =========================
+   SUCESSO
+========================= */
+
+resultado.textContent =
+"Inscrição enviada com sucesso! Os dados foram guardados e enviados para o e-mail.";
+
+resultado.className="success";
+
+document
+.getElementById("formInscricao")
+.reset();
+
+botao.disabled=false;
+
+botao.textContent =
 "Criar conta e enviar inscrição";
 
 });
 
 
-/* =========================
+/* ==================================================
    LOGIN
-========================= */
+================================================== */
 
-document.getElementById(
-"formLogin"
-).addEventListener(
+document.getElementById("formLogin")
+.addEventListener(
 "submit",
 async function(event){
 
 event.preventDefault();
 
-
 const email =
-document.getElementById(
-"loginEmail"
-).value.trim();
+document.getElementById("loginEmail")
+.value.trim();
 
 const password =
-document.getElementById(
-"loginPassword"
-).value;
+document.getElementById("loginPassword")
+.value;
 
 const resultado =
-document.getElementById(
-"resultadoLogin"
-);
+document.getElementById("resultadoLogin");
 
 
-const { data,error } =
+const {data,error} =
 await supabaseClient.auth.signInWithPassword({
 
 email:email,
@@ -2007,7 +1763,7 @@ password:password
 
 if(error){
 
-resultado.textContent=
+resultado.textContent =
 "E-mail ou palavra-passe incorretos.";
 
 resultado.className="error";
@@ -2017,22 +1773,16 @@ return;
 }
 
 
-resultado.textContent=
+resultado.textContent =
 "Login realizado com sucesso.";
 
 resultado.className="success";
-
-
-/*
-A ÁREA DO ALUNO SERÁ ADICIONADA
-NA PRÓXIMA ETAPA.
-*/
 
 });
 
 
 /* =========================
-   FECHAR MODAL AO CLICAR FORA
+   MODAL
 ========================= */
 
 window.addEventListener(
